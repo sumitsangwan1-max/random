@@ -353,7 +353,19 @@ function App() {
                             </div>
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-2">
-                                <h4 className="font-heading font-semibold text-lg">{winner.author}</h4>
+                                {winner.author_channel_url ? (
+                                  <a
+                                    href={winner.author_channel_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-heading font-semibold text-lg text-primary hover:text-primary/80 hover:underline cursor-pointer transition-all duration-200"
+                                    data-testid={`winner-${index}-channel-link`}
+                                  >
+                                    {winner.author}
+                                  </a>
+                                ) : (
+                                  <h4 className="font-heading font-semibold text-lg">{winner.author}</h4>
+                                )}
                                 <span className="text-xs font-mono text-muted-foreground">❤️ {winner.like_count}</span>
                               </div>
                               <p className="text-muted-foreground text-sm mb-2">{winner.text}</p>
