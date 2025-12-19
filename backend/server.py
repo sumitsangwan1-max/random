@@ -47,6 +47,7 @@ class FetchCommentsResponse(BaseModel):
     video_info: VideoInfo
     comments: List[Comment]
     total_comments: int
+    bots_detected: int
 
 class PickWinnersRequest(BaseModel):
     comments: List[Comment]
