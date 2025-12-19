@@ -363,13 +363,25 @@ function App() {
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-2">
                                 {winner.author_channel_url ? (
-                                  <button
-                                    onClick={() => window.open(winner.author_channel_url, '_blank', 'noopener,noreferrer')}
-                                    className="font-heading font-semibold text-lg text-primary hover:text-primary/80 hover:underline cursor-pointer transition-all duration-200 bg-transparent border-none p-0 text-left"
+                                  <a
+                                    href={winner.author_channel_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      const link = document.createElement('a');
+                                      link.href = winner.author_channel_url;
+                                      link.target = '_blank';
+                                      link.rel = 'noopener noreferrer';
+                                      document.body.appendChild(link);
+                                      link.click();
+                                      document.body.removeChild(link);
+                                    }}
+                                    className="font-heading font-semibold text-lg text-primary hover:text-primary/80 hover:underline cursor-pointer transition-all duration-200"
                                     data-testid={`winner-${index}-channel-link`}
                                   >
                                     {winner.author}
-                                  </button>
+                                  </a>
                                 ) : (
                                   <h4 className="font-heading font-semibold text-lg">{winner.author}</h4>
                                 )}
