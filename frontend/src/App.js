@@ -302,7 +302,8 @@ function App() {
                     min="1"
                     value={winnerCount}
                     onChange={(e) => setWinnerCount(e.target.value)}
-                    className="bg-black/50 border-white/10 focus:border-primary/50 rounded-lg"
+                    className="bg-gray-50 border-2 border-gray-200 focus:border-primary/50 text-lg p-4 rounded-2xl font-mono"
+
                   />
                 </div>
 
