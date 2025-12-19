@@ -143,22 +143,30 @@ async def fetch_comments(request: FetchCommentsRequest):
             
             for item in comment_response.get('items', []):
                 comment_data = item['snippet']['topLevelComment']['snippet']
+                author = comment_data['authorDisplayName']
+                text = comment_data['textDisplay']
+                
                 comments.append(Comment(
-                    author=comment_data['authorDisplayName'],
-                    text=comment_data['textDisplay'],
+                    author=author,
+                    text=text,
                     author_channel_url=comment_data.get('authorChannelUrl', ''),
                     published_at=comment_data['publishedAt'],
-                    like_count=comment_data.get('likeCount', 0)
+                    like_count=comment_data.get('likeCount', 0),
+                    is_bot=is_bot_comment(author, text)
                 ))
             
             next_page_token = comment_response.get('nextPageToken')
             if not next_page_token:
                 break
         
+        # Count bot comments
+        bots_detected = sum(1 for c in comments if c.is_bot)
+        
         return FetchCommentsResponse(
             video_info=video_info,
             comments=comments,
-            total_comments=len(comments)
+            total_comments=len(comments),
+            bots_detected=bots_detected
         )
         
     except HTTPException:
