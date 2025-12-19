@@ -348,21 +348,28 @@ function App() {
                           className="winner-card p-6 rounded-lg winner-reveal"
                         >
                           <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
-                              <span className="text-primary font-bold text-xl">#{index + 1}</span>
+                            <div className="flex items-start gap-3">
+                              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
+                                <span className="text-primary font-bold text-xl">#{index + 1}</span>
+                              </div>
+                              {winner.author_profile_image_url && (
+                                <img 
+                                  src={winner.author_profile_image_url}
+                                  alt={winner.author}
+                                  className="w-12 h-12 rounded-full border-2 border-white/10"
+                                />
+                              )}
                             </div>
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-2">
                                 {winner.author_channel_url ? (
-                                  <a
-                                    href={winner.author_channel_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="font-heading font-semibold text-lg text-primary hover:text-primary/80 hover:underline cursor-pointer transition-all duration-200"
+                                  <button
+                                    onClick={() => window.open(winner.author_channel_url, '_blank', 'noopener,noreferrer')}
+                                    className="font-heading font-semibold text-lg text-primary hover:text-primary/80 hover:underline cursor-pointer transition-all duration-200 bg-transparent border-none p-0 text-left"
                                     data-testid={`winner-${index}-channel-link`}
                                   >
                                     {winner.author}
-                                  </a>
+                                  </button>
                                 ) : (
                                   <h4 className="font-heading font-semibold text-lg">{winner.author}</h4>
                                 )}
