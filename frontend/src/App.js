@@ -187,6 +187,21 @@ function App() {
             <Card className="glass-card border-white/10">
               <CardHeader>
                 <CardTitle className="font-heading text-lg flex items-center gap-2">
+                  <Filter className="w-4 h-4 text-primary" />
+                  BOT Activity
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-4xl font-heading font-bold text-yellow-500">
+                  {botsDetected}
+                </div>
+                <div className="text-sm text-muted-foreground font-mono">BOTS Detected</div>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card border-white/10">
+              <CardHeader>
+                <CardTitle className="font-heading text-lg flex items-center gap-2">
                   <Trophy className="w-4 h-4 text-primary" />
                   Winners
                 </CardTitle>
