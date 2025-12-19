@@ -19,6 +19,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [videoInfo, setVideoInfo] = useState(null);
   const [comments, setComments] = useState([]);
+  const [botsDetected, setBotsDetected] = useState(0);
   const [excludeDuplicates, setExcludeDuplicates] = useState(true);
   const [keywordFilter, setKeywordFilter] = useState("");
   const [winnerCount, setWinnerCount] = useState(1);
