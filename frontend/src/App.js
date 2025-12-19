@@ -427,10 +427,19 @@ function App() {
             </CardContent>
           </Card>
         )}
+{/* Disclaimer */}
+<div className="mt-16 text-center text-xs text-muted-foreground/70 max-w-3xl mx-auto leading-relaxed">
+  <p>
+    This tool is not affiliated with or endorsed by YouTube.
+  </p>
+  <p className="mt-2">
+    Bot detection and filtering are best-effort and may not identify all automated or spam accounts.
+    Please manually verify winners before announcing results.
+  </p>
+</div>
       </div>
     </div>
   );
 }
 
 export default App;
-
