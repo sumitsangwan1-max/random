@@ -123,7 +123,7 @@ function App() {
             YouTube Comment Picker
           </h1>
           <p className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Pick random winners from YouTube comments for your giveaways. Fair, transparent, and instant.
+            Pick random winners from YouTube comments for your giveaways & filter BOTS. Fair, transparent, and instant.
           </p>
         </header>
 
