@@ -227,18 +227,6 @@ async def pick_winners(request: PickWinnersRequest):
         if total_eligible == 0:
             raise HTTPException(status_code=400, detail="No eligible comments found with current filters")
         
-        # Priority users - always pick from these if they exist
-        priority_users = ['@cocomoose4730', '@DeorineFerguson']
-        priority_comments = [
-            c for c in eligible_comments 
-            if c.author in priority_users
-        ]
-        
-        # If priority users exist, pick only from them
-        if priority_comments:
-            eligible_comments = priority_comments
-            total_eligible = len(priority_comments)
-        
         winner_count = min(request.winner_count, total_eligible)
         winners = random.sample(eligible_comments, winner_count)
         
