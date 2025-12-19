@@ -201,6 +201,9 @@ async def pick_winners(request: PickWinnersRequest):
         eligible_comments = request.comments.copy()
         total_initial = len(eligible_comments)
         
+        # ALWAYS exclude bots from winner selection
+        eligible_comments = [c for c in eligible_comments if not c.is_bot]
+        
         if request.exclude_duplicates:
             seen_authors = set()
             unique_comments = []
