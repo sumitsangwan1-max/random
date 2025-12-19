@@ -36,6 +36,7 @@ class Comment(BaseModel):
     author: str
     text: str
     author_channel_url: str
+    author_profile_image_url: str
     published_at: str
     like_count: int
     is_bot: bool = False
