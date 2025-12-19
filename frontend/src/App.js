@@ -34,7 +34,7 @@ function App() {
     }
 
     setLoading(true);
-    toast.info("Waking up server… first request may take up to 1 minute ⏳");
+    toast.info("Scanning for BOTS… first request may take up to 1 minute ⏳");
     try {
       const response = await axios.post(`${API}/youtube/fetch-comments`, {
         video_url: videoUrl
