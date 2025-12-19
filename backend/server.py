@@ -1,72 +1,193 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
-import uuid
-from datetime import datetime, timezone
-
+from pydantic import BaseModel
+from typing import List, Optional
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+import random
+import re
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
-# Create the main app without a prefix
 app = FastAPI()
-
-# Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+YOUTUBE_API_KEY = os.environ['YOUTUBE_API_KEY']
 
-# Define Models
-class StatusCheck(BaseModel):
-    model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
+class VideoInfo(BaseModel):
+    video_id: str
+    title: str
+    channel_title: str
+    thumbnail_url: str
+    view_count: str
+    like_count: str
+
+class Comment(BaseModel):
+    author: str
+    text: str
+    author_channel_url: str
+    published_at: str
+    like_count: int
+
+class FetchCommentsRequest(BaseModel):
+    video_url: str
+
+class FetchCommentsResponse(BaseModel):
+    video_info: VideoInfo
+    comments: List[Comment]
+    total_comments: int
+
+class PickWinnersRequest(BaseModel):
+    comments: List[Comment]
+    exclude_duplicates: bool = True
+    keyword_filter: Optional[str] = None
+    winner_count: int = 1
+
+class PickWinnersResponse(BaseModel):
+    winners: List[Comment]
+    total_eligible: int
+    total_filtered: int
+
+def extract_video_id(url: str) -> str:
+    """Extract video ID from YouTube URL"""
+    patterns = [
+        r'(?:youtube\.com\/watch\?v=)([\w-]+)',
+        r'(?:youtu\.be\/)([\w-]+)',
+        r'(?:youtube\.com\/embed\/)([\w-]+)',
+        r'(?:youtube\.com\/v\/)([\w-]+)'
+    ]
     
-    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    client_name: str
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-
-class StatusCheckCreate(BaseModel):
-    client_name: str
-
-# Add your routes to the router instead of directly to app
-@api_router.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-@api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
-    status_dict = input.model_dump()
-    status_obj = StatusCheck(**status_dict)
+    for pattern in patterns:
+        match = re.search(pattern, url)
+        if match:
+            return match.group(1)
     
-    # Convert to dict and serialize datetime to ISO string for MongoDB
-    doc = status_obj.model_dump()
-    doc['timestamp'] = doc['timestamp'].isoformat()
+    if len(url) == 11 and url.isalnum():
+        return url
     
-    _ = await db.status_checks.insert_one(doc)
-    return status_obj
+    raise ValueError("Invalid YouTube URL")
 
-@api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
-    # Exclude MongoDB's _id field from the query results
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
-    
-    # Convert ISO string timestamps back to datetime objects
-    for check in status_checks:
-        if isinstance(check['timestamp'], str):
-            check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
-    return status_checks
+@api_router.post("/youtube/fetch-comments", response_model=FetchCommentsResponse)
+async def fetch_comments(request: FetchCommentsRequest):
+    try:
+        video_id = extract_video_id(request.video_url)
+        youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY, cache_discovery=False)
+        
+        video_response = youtube.videos().list(
+            part='snippet,statistics',
+            id=video_id
+        ).execute()
+        
+        if not video_response.get('items'):
+            raise HTTPException(status_code=404, detail="Video not found")
+        
+        video_data = video_response['items'][0]
+        video_info = VideoInfo(
+            video_id=video_id,
+            title=video_data['snippet']['title'],
+            channel_title=video_data['snippet']['channelTitle'],
+            thumbnail_url=video_data['snippet']['thumbnails']['high']['url'],
+            view_count=video_data['statistics'].get('viewCount', '0'),
+            like_count=video_data['statistics'].get('likeCount', '0')
+        )
+        
+        comments = []
+        next_page_token = None
+        
+        while len(comments) < 500:
+            comment_response = youtube.commentThreads().list(
+                part='snippet',
+                videoId=video_id,
+                maxResults=100,
+                pageToken=next_page_token,
+                textFormat='plainText'
+            ).execute()
+            
+            for item in comment_response.get('items', []):
+                comment_data = item['snippet']['topLevelComment']['snippet']
+                comments.append(Comment(
+                    author=comment_data['authorDisplayName'],
+                    text=comment_data['textDisplay'],
+                    author_channel_url=comment_data.get('authorChannelUrl', ''),
+                    published_at=comment_data['publishedAt'],
+                    like_count=comment_data.get('likeCount', 0)
+                ))
+            
+            next_page_token = comment_response.get('nextPageToken')
+            if not next_page_token:
+                break
+        
+        return FetchCommentsResponse(
+            video_info=video_info,
+            comments=comments,
+            total_comments=len(comments)
+        )
+        
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except HttpError as e:
+        if 'commentsDisabled' in str(e):
+            raise HTTPException(status_code=400, detail="Comments are disabled for this video")
+        elif 'quotaExceeded' in str(e):
+            raise HTTPException(status_code=429, detail="YouTube API quota exceeded. Please try again later.")
+        else:
+            raise HTTPException(status_code=400, detail=f"YouTube API error: {str(e)}")
+    except Exception as e:
+        logging.error(f"Error fetching comments: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
-# Include the router in the main app
+@api_router.post("/youtube/pick-winners", response_model=PickWinnersResponse)
+async def pick_winners(request: PickWinnersRequest):
+    try:
+        eligible_comments = request.comments.copy()
+        total_initial = len(eligible_comments)
+        
+        if request.exclude_duplicates:
+            seen_authors = set()
+            unique_comments = []
+            for comment in eligible_comments:
+                if comment.author not in seen_authors:
+                    seen_authors.add(comment.author)
+                    unique_comments.append(comment)
+            eligible_comments = unique_comments
+        
+        if request.keyword_filter and request.keyword_filter.strip():
+            keywords = [k.strip().lower() for k in request.keyword_filter.split(',')]
+            eligible_comments = [
+                c for c in eligible_comments
+                if any(keyword in c.text.lower() for keyword in keywords)
+            ]
+        
+        total_eligible = len(eligible_comments)
+        
+        if total_eligible == 0:
+            raise HTTPException(status_code=400, detail="No eligible comments found with current filters")
+        
+        winner_count = min(request.winner_count, total_eligible)
+        winners = random.sample(eligible_comments, winner_count)
+        
+        return PickWinnersResponse(
+            winners=winners,
+            total_eligible=total_eligible,
+            total_filtered=total_initial - total_eligible
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logging.error(f"Error picking winners: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
 app.include_router(api_router)
 
 app.add_middleware(
@@ -77,7 +198,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
