@@ -79,6 +79,32 @@ def extract_video_id(url: str) -> str:
     
     raise ValueError("Invalid YouTube URL")
 
+def is_bot_comment(author: str, text: str) -> bool:
+    """Detect potential bot comments using heuristics"""
+    # Bot indicators
+    bot_keywords = ['subscribe', 'check out my channel', 'click here', 'http://', 'https://', 
+                    'bit.ly', 'giveaway winner', 'congratulations', 'dm me', 'whatsapp']
+    
+    # Check for spam patterns
+    if len(text) < 3:  # Very short comments
+        return True
+    
+    # Check for excessive caps (more than 70% of text)
+    if text.isupper() and len(text) > 10:
+        return True
+    
+    # Check for bot keywords
+    text_lower = text.lower()
+    if any(keyword in text_lower for keyword in bot_keywords):
+        return True
+    
+    # Check for suspicious username patterns
+    author_lower = author.lower()
+    if any(pattern in author_lower for pattern in ['bot', 'spam', 'giveaway']):
+        return True
+    
+    return False
+
 @api_router.post("/youtube/fetch-comments", response_model=FetchCommentsResponse)
 async def fetch_comments(request: FetchCommentsRequest):
     try:
