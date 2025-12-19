@@ -159,6 +159,7 @@ async def fetch_comments(request: FetchCommentsRequest):
                     author=author,
                     text=text,
                     author_channel_url=comment_data.get('authorChannelUrl', ''),
+                    author_profile_image_url=comment_data.get('authorProfileImageUrl', ''),
                     published_at=comment_data['publishedAt'],
                     like_count=comment_data.get('likeCount', 0),
                     is_bot=is_bot_comment(author, text)
