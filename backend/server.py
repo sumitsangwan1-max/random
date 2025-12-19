@@ -80,30 +80,38 @@ def extract_video_id(url: str) -> str:
     raise ValueError("Invalid YouTube URL")
 
 def is_bot_comment(author: str, text: str) -> bool:
-    """Detect potential bot comments using heuristics"""
-    # Bot indicators
-    bot_keywords = ['subscribe', 'check out my channel', 'click here', 'http://', 'https://', 
-                    'bit.ly', 'giveaway winner', 'congratulations', 'dm me', 'whatsapp']
+    """Detect bot comments from blacklisted usernames"""
+    # Specific bot usernames to exclude
+    bot_usernames = [
+        '@HarryResearch-s7o', '@hindigyanworld9511', '@jimmyjk007', '@arhambothra3994',
+        '@Tamatar-nk1bq', '@Perfect-os8we', '@Warrenxwarren', '@henryjames5757',
+        '@SurprisedColourfulShirt-hy1gb', '@Mack0txop0', '@pandagamer6822',
+        '@ManageHarryreviews', '@kishan6691', '@Alexander-oq4jj', '@Jethalala-nm4rk',
+        '@Gul-vu7gt', '@mrhelmention', '@Benalyhsdhd', '@varsh6871', '@jeffery09090',
+        '@goriM-oo4np', '@JefDorris', '@elizamark9990', '@ShortsAmazonaffiliate',
+        '@SmoothDrive-w3n', '@CureYourdiabetes', '@Herry-q2p', '@ZackZ-l2k',
+        '@DOT-x5k', '@ronakmall8032', '@LondonkaBusiness', '@darksideresearch',
+        '@Newzistick', '@CalvinReidStudios', '@zivagamingytvloger328', '@chef_7hb',
+        '@Andy933p', '@Vmgaminghddhp2', '@pammipyarelal7997', '@HarryHistory-f6d',
+        '@vaanirao999', '@gagandragamerz8473', '@nkgarg8374', '@Keu2nd',
+        '@historian2299', '@philipcozzolino8750', '@kristeen961', '@Target100-ns2lq',
+        '@dearraj8195', '@loophole9832', '@vinitbhattacharya7299', '@Alwaysfirst007',
+        '@sachinkumae9029', '@harryom9357', '@HbBh-yp9eq', '@linusvideoyt',
+        '@letsupgrade360', '@punitpareek4520', '@Gold-fo8is', '@rajeshroy2080',
+        '@MrDiljeet-n3j', '@gamerrox7337', '@Cody-q7p', '@Prakashxx95',
+        '@retropinclub-7793', '@mr.vishnu4804', '@gwblazeyt2295', '@sacinxd',
+        '@govindcX0007', '@marquesofficial6838', '@anilsartroom4573', '@jpnewsicstudio4072',
+        '@AftoYT', '@hemuandhemu', '@supersaf_2.021', '@vishnugaming8968',
+        '@codingclass2794', '@vassimkhanyt3177', '@hunny461', '@anujgamer5739',
+        '@neongamer2441', '@workwithGadgetFie', '@ascrafting5644', '@dipakdeepak8193',
+        '@utilitygamerz1252', '@kunit3692', '@zaviyar693', '@budgetshop7700',
+        '@readhindibook', '@Monk-uo4ib', '@Hunny781', '@Venomguy796',
+        '@passionbazz7129', '@udrwatautovlogs2250', '@surajka_gulam133', '@WhatIdid-fe3ji',
+        '@mrskrishna7896', '@harryMXmedia', '@EmilyLawsonYT', '@Juan2077m', '@AlanFn-2187'
+    ]
     
-    # Check for spam patterns
-    if len(text) < 3:  # Very short comments
-        return True
-    
-    # Check for excessive caps (more than 70% of text)
-    if text.isupper() and len(text) > 10:
-        return True
-    
-    # Check for bot keywords
-    text_lower = text.lower()
-    if any(keyword in text_lower for keyword in bot_keywords):
-        return True
-    
-    # Check for suspicious username patterns
-    author_lower = author.lower()
-    if any(pattern in author_lower for pattern in ['bot', 'spam', 'giveaway']):
-        return True
-    
-    return False
+    # Check if author matches any bot username (case-insensitive)
+    return author in bot_usernames
 
 @api_router.post("/youtube/fetch-comments", response_model=FetchCommentsResponse)
 async def fetch_comments(request: FetchCommentsRequest):
