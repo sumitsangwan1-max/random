@@ -136,10 +136,13 @@ async def fetch_comments(request: FetchCommentsRequest):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except HttpError as e:
-        if 'commentsDisabled' in str(e):
+        error_content = str(e)
+        if 'commentsDisabled' in error_content:
             raise HTTPException(status_code=400, detail="Comments are disabled for this video")
-        elif 'quotaExceeded' in str(e):
+        elif 'quotaExceeded' in error_content:
             raise HTTPException(status_code=429, detail="YouTube API quota exceeded. Please try again later.")
+        elif 'videoNotFound' in error_content or e.resp.status == 404:
+            raise HTTPException(status_code=404, detail="Video not found")
         else:
             raise HTTPException(status_code=400, detail=f"YouTube API error: {str(e)}")
     except Exception as e:
