@@ -146,7 +146,7 @@ function App() {
                   placeholder="https://www.youtube.com/watch?v=..."
                   value={videoUrl}
                   onChange={(e) => setVideoUrl(e.target.value)}
-                  className="bg-black/50 border-2 border-white/10 focus:border-primary/50 text-xl p-8 rounded-2xl font-mono"
+                  className="bg-gray-50 border-2 border-gray-200 focus:border-primary/50 text-xl p-8 rounded-2xl font-mono"
                   onKeyPress={(e) => e.key === 'Enter' && fetchComments()}
                 />
               </div>
