@@ -1,6 +1,6 @@
 {
   "engines": {
-  "node": "24.x"
+  "node": "20.x"
 },
   "name": "frontend",
   "version": "0.1.0",
