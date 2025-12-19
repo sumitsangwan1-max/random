@@ -34,7 +34,7 @@ function App() {
     }
 
     setLoading(true);
-    toast.info("Scanning for BOTS… first request may take up to 1 minute ⏳");
+    
     try {
       const response = await axios.post(`${API}/youtube/fetch-comments`, {
         video_url: videoUrl
@@ -114,6 +114,25 @@ function App() {
   return (
     <div className="min-h-screen bg-background noise-texture">
       <Toaster position="top-right" />
+    {/* Global Loading Overlay */}
+{loading && (
+  <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center">
+    <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-xl">
+      <div className="mb-4 flex justify-center">
+        <div className="animate-spin-slow text-4xl">⚡</div>
+      </div>
+      <h2 className="font-heading text-2xl font-bold mb-3">
+        Scanning for Bot Activity
+      </h2>
+      <p className="text-muted-foreground text-sm leading-relaxed">
+        Waking up server and scanning comments for bot activity.<br />
+        This may take up to <strong>1–2 minutes</strong> on first request.<br />
+        Please do not refresh or close the page.
+      </p>
+    </div>
+  </div>
+)}
+
       
       <div className="hero-glow absolute top-0 left-0 right-0 h-96 pointer-events-none" />
       
