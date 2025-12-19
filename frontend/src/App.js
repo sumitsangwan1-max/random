@@ -41,6 +41,7 @@ function App() {
       
       setVideoInfo(response.data.video_info);
       setComments(response.data.comments);
+      setBotsDetected(response.data.bots_detected);
       setWinners([]);
       setStats(null);
       toast.success(`Fetched ${response.data.total_comments} comments successfully!`);
