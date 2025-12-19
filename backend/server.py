@@ -38,6 +38,7 @@ class Comment(BaseModel):
     author_channel_url: str
     published_at: str
     like_count: int
+    is_bot: bool = False
 
 class FetchCommentsRequest(BaseModel):
     video_url: str
