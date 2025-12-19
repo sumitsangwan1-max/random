@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter, HTTPException, Request
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -11,6 +11,8 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 import random
 import re
+import time
+
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -20,7 +22,16 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
 app = FastAPI()
+
+# 🔒 Rate limiting settings
+RATE_LIMIT = 5            # max requests per IP
+RATE_LIMIT_WINDOW = 60    # seconds
+
+# In-memory store for IP request timestamps
+ip_requests = {}
+
 api_router = APIRouter(prefix="/api")
+
 
 YOUTUBE_API_KEY = os.environ['YOUTUBE_API_KEY']
 
@@ -114,8 +125,32 @@ def is_bot_comment(author: str, text: str) -> bool:
     # Check if author matches any bot username (case-insensitive)
     return author in bot_usernames
 
+# 🔒 Rate limit checker
+def check_rate_limit(request: Request):
+    ip = request.client.host
+    now = time.time()
+
+    if ip not in ip_requests:
+        ip_requests[ip] = []
+
+    # Keep only requests from the last RATE_LIMIT_WINDOW seconds
+    ip_requests[ip] = [
+        t for t in ip_requests[ip]
+        if now - t < RATE_LIMIT_WINDOW
+    ]
+
+    if len(ip_requests[ip]) >= RATE_LIMIT:
+        raise HTTPException(
+            status_code=429,
+            detail="Too many requests. Please wait a minute and try again."
+        )
+
+    ip_requests[ip].append(now)
+
 @api_router.post("/youtube/fetch-comments", response_model=FetchCommentsResponse)
-async def fetch_comments(request: FetchCommentsRequest):
+async def fetch_comments(request: FetchCommentsRequest, req: Request):
+    check_rate_limit(req)  # 🔒 APPLY RATE LIMIT
+
     try:
         video_id = extract_video_id(request.video_url)
         youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY, cache_discovery=False)
@@ -198,7 +233,9 @@ async def fetch_comments(request: FetchCommentsRequest):
         raise HTTPException(status_code=500, detail="Internal server error")
 
 @api_router.post("/youtube/pick-winners", response_model=PickWinnersResponse)
-async def pick_winners(request: PickWinnersRequest):
+async def pick_winners(request: PickWinnersRequest, req: Request):
+    check_rate_limit(req)  # 🔒 APPLY RATE LIMIT
+
     try:
         eligible_comments = request.comments.copy()
         total_initial = len(eligible_comments)
