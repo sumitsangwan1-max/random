@@ -288,7 +288,8 @@ function App() {
                     placeholder="keyword1, keyword2"
                     value={keywordFilter}
                     onChange={(e) => setKeywordFilter(e.target.value)}
-                    className="bg-black/50 border-white/10 focus:border-primary/50 rounded-lg"
+                    className="bg-gray-50 border-2 border-gray-200 focus:border-primary/50 text-lg p-4 rounded-2xl font-mono"
+
                   />
                   <p className="text-xs text-muted-foreground">Comma-separated keywords to filter comments</p>
                 </div>
