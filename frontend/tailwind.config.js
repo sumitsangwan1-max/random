@@ -18,38 +18,38 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "#27272a",
-        input: "#27272a",
+        border: "#e5e7eb",
+        input: "#f3f4f6",
         ring: "#ff0033",
-        background: "#09090b",
-        foreground: "#fafafa",
+        background: "#ffffff",
+        foreground: "#0f172a",
         primary: {
           DEFAULT: "#ff0033",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#27272a",
-          foreground: "#fafafa",
+          DEFAULT: "#f1f5f9",
+          foreground: "#0f172a",
         },
         destructive: {
-          DEFAULT: "#7f1d1d",
-          foreground: "#fafafa",
+          DEFAULT: "#dc2626",
+          foreground: "#ffffff",
         },
         muted: {
-          DEFAULT: "#27272a",
-          foreground: "#a1a1aa",
+          DEFAULT: "#f1f5f9",
+          foreground: "#475569",
         },
         accent: {
           DEFAULT: "#ff0033",
           foreground: "#ffffff",
         },
         popover: {
-          DEFAULT: "#09090b",
-          foreground: "#fafafa",
+          DEFAULT: "#ffffff",
+          foreground: "#0f172a",
         },
         card: {
-          DEFAULT: "#121214",
-          foreground: "#fafafa",
+          DEFAULT: "#f9fafb",
+          foreground: "#0f172a",
         },
       },
       fontFamily: {
