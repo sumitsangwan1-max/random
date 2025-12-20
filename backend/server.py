@@ -97,7 +97,7 @@ def is_bot_comment(author: str, text: str) -> bool:
     bot_usernames = {
         '@tylernoahanderson1997', '@Louis-Vincent-Myers', '@Randy.James.Harris',
         '@terrybrown1977', '@austinward23', '@JoshuaEthanCook',
-        '@Jeffrey-Jose-Roberts', '@zacharyloganortiz1973',
+        '@Jeffrey-Jose-Roberts', '@zacharyloganortiz1973', '@subho-v5s',
     }
     
     return author in bot_usernames
