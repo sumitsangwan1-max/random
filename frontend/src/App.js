@@ -25,6 +25,7 @@ function App() {
   const [winnerCount, setWinnerCount] = useState(1);
   const [winners, setWinners] = useState([]);
   const [stats, setStats] = useState(null);
+  const [shuffling, setShuffling] = useState(false);
   const [shufflingWinners, setShufflingWinners] = useState([]);
   const [previousWinners, setPreviousWinners] = useState([]);  // Track all previous winners
   const [showTerms, setShowTerms] = useState(false);
