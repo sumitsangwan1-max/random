@@ -378,9 +378,6 @@ def is_bot_comment(author: str, text: str) -> bool:
         "StarSuperPC",
         "WhereDayLast",
         "LuckyDayMay",
-        "@SimplyUC",
-        "@gori_maheswari8994",
-        "@shrivass1598",
     ]
     
     # Clean the author name (remove @ if present)
