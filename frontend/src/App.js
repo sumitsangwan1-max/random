@@ -511,15 +511,33 @@ function App() {
           </Card>
         )}
 {/* Disclaimer */}
-<div className="mt-16 text-center text-xs text-muted-foreground/70 max-w-3xl mx-auto leading-relaxed">
-  <p>
-    This tool is not affiliated with or endorsed by YouTube.
-  </p>
-  <p className="mt-2">
-    Bot detection and filtering are best-effort and may not identify all automated or spam accounts.
-    Please manually verify winners before announcing results.
-  </p>
-</div>
+<footer className="mt-20 pt-8 pb-12 border-t border-white/10">
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <h3 className="font-heading font-bold text-lg mb-1">
+      Random Comment Picker
+    </h3>
+    <p className="text-sm text-muted-foreground mb-4">
+      Fair & transparent YouTube giveaway tool
+    </p>
+
+    <div className="flex justify-center gap-6 text-sm mb-4">
+      <span className="text-muted-foreground hover:text-primary cursor-pointer">
+        Terms of Service
+      </span>
+      <span className="text-muted-foreground hover:text-primary cursor-pointer">
+        Privacy Policy
+      </span>
+      <span className="text-muted-foreground hover:text-primary cursor-pointer">
+        Disclaimer
+      </span>
+    </div>
+
+    <p className="text-xs text-muted-foreground">
+      © {new Date().getFullYear()} Random Comment Picker. All rights reserved.
+    </p>
+  </div>
+</footer>
+
       </div>
     </div>
   );
