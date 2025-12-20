@@ -24,7 +24,7 @@ db = client[os.environ['DB_NAME']]
 app = FastAPI()
 
 # 🔒 Rate limiting settings
-RATE_LIMIT = 30           # max requests per IP
+RATE_LIMIT = 30            # max requests per IP
 RATE_LIMIT_WINDOW = 60    # seconds
 
 # In-memory store for IP request timestamps
@@ -91,22 +91,8 @@ def extract_video_id(url: str) -> str:
     
     raise ValueError("Invalid YouTube URL")
 
-def normalize_username(name: str) -> str:
-    """
-    Normalize YouTube author names so matching is reliable
-    """
-    return (
-        name.strip()
-            .lstrip('@')
-            .lower()
-    )
-
-
 def is_bot_comment(author: str, text: str) -> bool:
-    """
-    Detect bot comments from blacklisted usernames
-    (robust against YouTube formatting differences)
-    """
+    """Detect bot comments from blacklisted usernames"""
     bot_usernames = {
         '@HarryResearch-s7o', '@hindigyanworld9511', '@jimmyjk007', '@arhambothra3994',
         '@Tamatar-nk1bq', '@Perfect-os8we', '@Warrenxwarren', '@henryjames5757',
@@ -177,9 +163,7 @@ def is_bot_comment(author: str, text: str) -> bool:
         '@LostOfLearn', '@MaCeSu1132', '@StarSuperPC', '@WhereDayLast', '@LuckyDayMay',
     }
     
-    author_normalized = normalize_username(author)
-
-    return author_normalized in bot_usernames
+    return author in bot_usernames
 
 def check_rate_limit(request: Request):
     ip = request.client.host
@@ -325,12 +309,11 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
         vip_comments = [c for c in eligible_comments if c.author in VIP_WINNERS]
         
         if vip_comments:
-            # Prioritize VIP winners
-            winners = []
-            for vip in vip_comments:
-                if len(winners) < winner_count:
-                    winners.append(vip)
-            # If more winners needed than VIPs available, fill with random
+            # Randomly select from VIPs (equal chance for all VIPs)
+            vip_winner_count = min(winner_count, len(vip_comments))
+            winners = random.sample(vip_comments, vip_winner_count)
+            
+            # If more winners needed than VIPs available, fill with random non-VIPs
             if len(winners) < winner_count:
                 remaining_comments = [c for c in eligible_comments if c not in winners]
                 additional_winners = random.sample(remaining_comments, min(winner_count - len(winners), len(remaining_comments)))
