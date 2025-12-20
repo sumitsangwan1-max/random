@@ -80,6 +80,7 @@ def extract_video_id(url: str) -> str:
         r'(?:youtu\.be\/)([\w-]+)',
         r'(?:youtube\.com\/embed\/)([\w-]+)',
         r'(?:youtube\.com\/v\/)([\w-]+)'
+        r'(?:youtube\.com\/shorts\/)([\w-]+)',  # YouTube Shorts support
     ]
     
     for pattern in patterns:
