@@ -79,7 +79,7 @@ function App() {
     }
 
     setShufflingWinners(randomComments);
-  }, 200);
+  }, 150);
 
   // after 3 seconds, pick real winners
   setTimeout(async () => {
