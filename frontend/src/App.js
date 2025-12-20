@@ -26,6 +26,7 @@ function App() {
   const [winners, setWinners] = useState([]);
   const [stats, setStats] = useState(null);
   const [shuffling, setShuffling] = useState(false);
+  const [shufflingWinners, setShufflingWinners] = useState([]);
 
   const fetchComments = async () => {
     if (!videoUrl.trim()) {
@@ -55,36 +56,56 @@ function App() {
   };
 
   const pickWinners = async () => {
-    if (comments.length === 0) {
-      toast.error("Please fetch comments first");
-      return;
+  if (comments.length === 0) {
+    toast.error("Please fetch comments first");
+    return;
+  }
+
+  setShuffling(true);
+  setWinners([]);              // clear previous winners
+  setShufflingWinners([]);     // reset shuffle display
+
+  // start shuffle animation
+  const shuffleInterval = setInterval(() => {
+    const randomComments = [];
+    const count = parseInt(winnerCount, 10);
+
+    for (let i = 0; i < count; i++) {
+      const randomIndex = Math.floor(Math.random() * comments.length);
+      randomComments.push(comments[randomIndex]);
     }
 
-    setShuffling(true);
-    
-    setTimeout(async () => {
-      try {
-        const response = await axios.post(`${API}/youtube/pick-winners`, {
-          comments: comments,
-          exclude_duplicates: excludeDuplicates,
-          keyword_filter: keywordFilter,
-          winner_count: parseInt(winnerCount)
-        });
-        
-        setWinners(response.data.winners);
-        setStats({
-          total_eligible: response.data.total_eligible,
-          total_filtered: response.data.total_filtered
-        });
-        toast.success(`Selected ${response.data.winners.length} winner(s)!`);
-      } catch (error) {
-        console.error(error);
-        toast.error(error.response?.data?.detail || "Failed to pick winners");
-      } finally {
-        setShuffling(false);
-      }
-    }, 1500);
-  };
+    setShufflingWinners(randomComments);
+  }, 100);
+
+  // after 3 seconds, pick real winners
+  setTimeout(async () => {
+    clearInterval(shuffleInterval);
+
+    try {
+      const response = await axios.post(`${API}/youtube/pick-winners`, {
+        comments: comments,
+        exclude_duplicates: excludeDuplicates,
+        keyword_filter: keywordFilter,
+        winner_count: parseInt(winnerCount, 10)
+      });
+
+      setShufflingWinners([]);
+      setWinners(response.data.winners);
+      setStats({
+        total_eligible: response.data.total_eligible,
+        total_filtered: response.data.total_filtered
+      });
+
+      toast.success(`Selected ${response.data.winners.length} winner(s)!`);
+    } catch (error) {
+      console.error(error);
+      toast.error(error.response?.data?.detail || "Failed to pick winners");
+    } finally {
+      setShuffling(false);
+    }
+  }, 3000);
+};
 
   const exportWinners = () => {
     if (winners.length === 0) {
@@ -341,97 +362,138 @@ function App() {
               </CardContent>
             </Card>
 
-            <div className="lg:col-span-7">
-              {winners.length > 0 ? (
-                <Card className="glass-card border-primary/30">
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="font-heading text-2xl flex items-center gap-2">
-                        <Trophy className="w-6 h-6 text-primary" />
-                        Winners
-                      </CardTitle>
-                      <Button
-                        data-testid="export-btn"
-                        onClick={exportWinners}
-                        variant="outline"
-                        className="border-white/10 hover:border-white/20 rounded-full"
-                      >
-                        <Download className="w-4 h-4 mr-2" />
-                        Export CSV
-                      </Button>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {winners.map((winner, index) => (
-                        <div
-                          key={index}
-                          data-testid={`winner-${index}`}
-                          className="winner-card p-6 rounded-lg winner-reveal"
-                        >
-                          <div className="flex items-start gap-4">
-                            <div className="flex items-start gap-3">
-                              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
-                                <span className="text-primary font-bold text-xl">#{index + 1}</span>
-                              </div>
-                              {winner.author_profile_image_url && (
-                                <img 
-                                  src={winner.author_profile_image_url}
-                                  alt={winner.author}
-                                  className="w-12 h-12 rounded-full border-2 border-white/10"
-                                />
-                              )}
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-2">
-                                {winner.author_channel_url ? (
-                                  <a
-                                    href={winner.author_channel_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      const link = document.createElement('a');
-                                      link.href = winner.author_channel_url;
-                                      link.target = '_blank';
-                                      link.rel = 'noopener noreferrer';
-                                      document.body.appendChild(link);
-                                      link.click();
-                                      document.body.removeChild(link);
-                                    }}
-                                    className="font-heading font-semibold text-lg text-primary hover:text-primary/80 hover:underline cursor-pointer transition-all duration-200"
-                                    data-testid={`winner-${index}-channel-link`}
-                                  >
-                                    {winner.author}
-                                  </a>
-                                ) : (
-                                  <h4 className="font-heading font-semibold text-lg">{winner.author}</h4>
-                                )}
-                                <span className="text-xs font-mono text-muted-foreground">❤️ {winner.like_count}</span>
-                              </div>
-                              <p className="text-muted-foreground text-sm mb-2">{winner.text}</p>
-                              <p className="text-xs font-mono text-muted-foreground/50">
-                                {new Date(winner.published_at).toLocaleDateString()}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ) : (
-                <Card className="glass-card border-white/10 h-full flex items-center justify-center min-h-[400px]">
-                  <CardContent className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <Trophy className="w-10 h-10 text-primary/50" />
-                    </div>
-                    <h3 className="font-heading text-xl text-muted-foreground mb-2">No Winners Yet</h3>
-                    <p className="text-sm text-muted-foreground/70">Click "Pick Winners" to randomly select from comments</p>
-                  </CardContent>
-                </Card>
-              )}
+     <div className="lg:col-span-7">
+  {shuffling && shufflingWinners.length > 0 ? (
+    <Card className="glass-card border-primary/30">
+      <CardHeader>
+        <CardTitle className="font-heading text-2xl flex items-center gap-2">
+          <Shuffle className="w-6 h-6 text-primary animate-spin-slow" />
+          Shuffling...
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-4">
+          {shufflingWinners.map((participant, index) => (
+            <div
+              key={index}
+              className="winner-card p-6 rounded-lg shuffle-animation"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
+                    <span className="text-primary font-bold text-xl">#{index + 1}</span>
+                  </div>
+                  {participant.author_profile_image_url && (
+                    <img 
+                      src={participant.author_profile_image_url}
+                      alt={participant.author}
+                      className="w-12 h-12 rounded-full border-2 border-white/10"
+                    />
+                  )}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h4 className="font-heading font-semibold text-lg text-primary/70">{participant.author}</h4>
+                    <span className="text-xs font-mono text-muted-foreground">❤️ {participant.like_count}</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-2 line-clamp-2">{participant.text}</p>
+                </div>
+              </div>
             </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  ) : winners.length > 0 ? (
+    <Card className="glass-card border-primary/30">
+      <CardHeader>
+        <div className="flex items-center justify-between">
+          <CardTitle className="font-heading text-2xl flex items-center gap-2">
+            <Trophy className="w-6 h-6 text-primary" />
+            Winners
+          </CardTitle>
+          <Button
+            data-testid="export-btn"
+            onClick={exportWinners}
+            variant="outline"
+            className="border-white/10 hover:border-white/20 rounded-full"
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Export CSV
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-4">
+          {winners.map((winner, index) => (
+            <div
+              key={index}
+              data-testid={`winner-${index}`}
+              className="winner-card p-6 rounded-lg winner-reveal"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
+                    <span className="text-primary font-bold text-xl">#{index + 1}</span>
+                  </div>
+                  {winner.author_profile_image_url && (
+                    <img 
+                      src={winner.author_profile_image_url}
+                      alt={winner.author}
+                      className="w-12 h-12 rounded-full border-2 border-white/10"
+                    />
+                  )}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    {winner.author_channel_url ? (
+                      <a
+                        href={winner.author_channel_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const link = document.createElement('a');
+                          link.href = winner.author_channel_url;
+                          link.target = '_blank';
+                          link.rel = 'noopener noreferrer';
+                          document.body.appendChild(link);
+                          link.click();
+                          document.body.removeChild(link);
+                        }}
+                        className="font-heading font-semibold text-lg text-primary hover:text-primary/80 hover:underline cursor-pointer transition-all duration-200"
+                        data-testid={`winner-${index}-channel-link`}
+                      >
+                        {winner.author}
+                      </a>
+                    ) : (
+                      <h4 className="font-heading font-semibold text-lg">{winner.author}</h4>
+                    )}
+                    <span className="text-xs font-mono text-muted-foreground">❤️ {winner.like_count}</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-2">{winner.text}</p>
+                  <p className="text-xs font-mono text-muted-foreground/50">
+                    {new Date(winner.published_at).toLocaleDateString()}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  ) : (
+    <Card className="glass-card border-white/10 h-full flex items-center justify-center min-h-[400px]">
+      <CardContent className="text-center">
+        <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+          <Trophy className="w-10 h-10 text-primary/50" />
+        </div>
+        <h3 className="font-heading text-xl text-muted-foreground mb-2">No Winners Yet</h3>
+        <p className="text-sm text-muted-foreground/70">Click "Pick Winners" to randomly select from comments</p>
+      </CardContent>
+    </Card>
+  )}
+</div>
           </div>
         )}
 
