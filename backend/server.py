@@ -24,7 +24,7 @@ db = client[os.environ['DB_NAME']]
 app = FastAPI()
 
 # 🔒 Rate limiting settings
-RATE_LIMIT = 30           # max requests per IP
+RATE_LIMIT = 5            # max requests per IP
 RATE_LIMIT_WINDOW = 60    # seconds
 
 # In-memory store for IP request timestamps
@@ -95,9 +95,9 @@ def extract_video_id(url: str) -> str:
 def is_bot_comment(author: str, text: str) -> bool:
     """Detect bot comments from blacklisted usernames"""
     bot_usernames = {
-        
- '@tylernoahanderson1997',
-
+        '@tylernoahanderson1997', '@Louis-Vincent-Myers', '@Randy.James.Harris',
+        '@terrybrown1977', '@austinward23', '@JoshuaEthanCook',
+        '@Jeffrey-Jose-Roberts', '@zacharyloganortiz1973',
     }
     
     return author in bot_usernames
