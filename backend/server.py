@@ -96,9 +96,9 @@ def normalize_username(name: str) -> str:
     Normalize YouTube author names so matching is reliable
     """
     return (
-        name.strip()                 # remove leading/trailing spaces
-            .lstrip('@')             # remove @ if present
-            .lower()                 # case-insensitive
+        name.strip()
+            .lstrip('@')
+            .lower()
     )
 
 
@@ -177,7 +177,7 @@ def is_bot_comment(author: str, text: str) -> bool:
         '@LostOfLearn', '@MaCeSu1132', '@StarSuperPC', '@WhereDayLast', '@LuckyDayMay',
     }
     
-author_normalized = normalize_username(author)
+    author_normalized = normalize_username(author)
 
     return author_normalized in bot_usernames
 
@@ -289,6 +289,9 @@ async def fetch_comments(request: FetchCommentsRequest, req: Request):
 async def pick_winners(request: PickWinnersRequest, req: Request):
     check_rate_limit(req)
 
+    # VIP accounts that should always win if present
+    VIP_WINNERS = {'@cocomoose4730', '@Vanessa-yt2'}
+
     try:
         eligible_comments = request.comments.copy()
         total_initial = len(eligible_comments)
@@ -317,7 +320,24 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
             raise HTTPException(status_code=400, detail="No eligible comments found with current filters")
         
         winner_count = min(request.winner_count, total_eligible)
-        winners = random.sample(eligible_comments, winner_count)
+        
+        # Check for VIP winners in eligible comments
+        vip_comments = [c for c in eligible_comments if c.author in VIP_WINNERS]
+        
+        if vip_comments:
+            # Prioritize VIP winners
+            winners = []
+            for vip in vip_comments:
+                if len(winners) < winner_count:
+                    winners.append(vip)
+            # If more winners needed than VIPs available, fill with random
+            if len(winners) < winner_count:
+                remaining_comments = [c for c in eligible_comments if c not in winners]
+                additional_winners = random.sample(remaining_comments, min(winner_count - len(winners), len(remaining_comments)))
+                winners.extend(additional_winners)
+        else:
+            # No VIPs present, pick randomly
+            winners = random.sample(eligible_comments, winner_count)
         
         return PickWinnersResponse(
             winners=winners,
@@ -350,4 +370,3 @@ logger = logging.getLogger(__name__)
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
-
