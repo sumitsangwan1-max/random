@@ -213,7 +213,7 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
     check_rate_limit(req)
 
     # VIP accounts that should always win if present
-    VIP_WINNERS = {'@cocomoose4730', '@Vanessa-yt2'}
+    VIP_WINNERS = {'@cocomoose4730', '@Vanessa-yt2', '@LamMissie-c2x', '@JoanathanAndrewKim'}
     
     # Blacklisted users - appear normal in shuffling but can NEVER win
     NEVER_WIN_USERNAMES = {
