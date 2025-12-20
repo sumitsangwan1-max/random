@@ -20,12 +20,18 @@
 }
 
 .shuffle-animation {
-  animation: shuffle 0.5s ease-in-out;
+  animation: shuffle 0.1s ease-in-out infinite;
 }
 
 @keyframes shuffle {
-  0%, 100% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(-10px); opacity: 0.5; }
+  0%, 100% { 
+    transform: translateY(0) scale(1); 
+    opacity: 0.8; 
+  }
+  50% { 
+    transform: translateY(-5px) scale(1.02); 
+    opacity: 1; 
+  }
 }
 
 .winner-reveal {
