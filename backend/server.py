@@ -74,13 +74,13 @@ class PickWinnersResponse(BaseModel):
     total_filtered: int
 
 def extract_video_id(url: str) -> str:
-    """Extract video ID from YouTube URL"""
+    """Extract video ID from YouTube URL (supports Shorts)"""
     patterns = [
         r'(?:youtube\.com\/watch\?v=)([\w-]+)',
         r'(?:youtu\.be\/)([\w-]+)',
         r'(?:youtube\.com\/embed\/)([\w-]+)',
-        r'(?:youtube\.com\/v\/)([\w-]+)'
-        r'(?:youtube\.com\/shorts\/)([\w-]+)',  # YouTube Shorts support
+        r'(?:youtube\.com\/v\/)([\w-]+)',
+        r'(?:youtube\.com\/shorts\/)([\w-]+)'  # ✅ Shorts support
     ]
     
     for pattern in patterns:
@@ -88,7 +88,8 @@ def extract_video_id(url: str) -> str:
         if match:
             return match.group(1)
     
-    if len(url) == 11 and url.isalnum():
+    # Direct video ID (11 chars)
+    if len(url) == 11 and re.match(r'^[\w-]+$', url):
         return url
     
     raise ValueError("Invalid YouTube URL")
