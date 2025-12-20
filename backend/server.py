@@ -96,9 +96,7 @@ def is_bot_comment(author: str, text: str) -> bool:
     """Detect bot comments from blacklisted usernames"""
     bot_usernames = {
         
- '@tylernoahanderson1997', '@Louis-Vincent-Myers', '@Randy.James.Harris',
-'@terrybrown1977', '@austinward23', '@JoshuaEthanCook',
-'@Jeffrey-Jose-Roberts', 
+ '@tylernoahanderson1997',
 
     }
     
