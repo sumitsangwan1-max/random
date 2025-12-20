@@ -25,8 +25,9 @@ function App() {
   const [winnerCount, setWinnerCount] = useState(1);
   const [winners, setWinners] = useState([]);
   const [stats, setStats] = useState(null);
-  const [shuffling, setShuffling] = useState(false);
   const [shufflingWinners, setShufflingWinners] = useState([]);
+  const [previousWinners, setPreviousWinners] = useState([]);  // Track all previous winners
+  const [showTerms, setShowTerms] = useState(false);
 
   const fetchComments = async () => {
     if (!videoUrl.trim()) {
@@ -45,6 +46,7 @@ function App() {
       setComments(response.data.comments);
       setBotsDetected(response.data.bots_detected);
       setWinners([]);
+      setPreviousWinners([]);  // Reset previous winners for new video
       setStats(null);
       toast.success(`Fetched ${response.data.total_comments} comments successfully!`);
     } catch (error) {
@@ -83,16 +85,19 @@ function App() {
     clearInterval(shuffleInterval);
 
     try {
-      const response = await axios.post(`${API}/youtube/pick-winners`, {
-        comments: comments,
-        exclude_duplicates: excludeDuplicates,
-        keyword_filter: keywordFilter,
-        winner_count: parseInt(winnerCount, 10)
-      });
-
-      setShufflingWinners([]);
-      setWinners(response.data.winners);
-      setStats({
+     const response = await axios.post(`${API}/youtube/pick-winners`, {
+          comments: comments,
+          exclude_duplicates: excludeDuplicates,
+          keyword_filter: keywordFilter,
+          winner_count: parseInt(winnerCount),
+          excluded_authors: previousWinners  // Exclude previous winners
+        });
+        
+        setShufflingWinners([]);
+        setWinners(response.data.winners);
+        // Add new winners to previous winners list
+        setPreviousWinners(prev => [...prev, ...response.data.winners.map(w => w.author)]);
+        setStats({
         total_eligible: response.data.total_eligible,
         total_filtered: response.data.total_filtered
       });
