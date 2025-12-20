@@ -24,7 +24,7 @@ db = client[os.environ['DB_NAME']]
 app = FastAPI()
 
 # 🔒 Rate limiting settings
-RATE_LIMIT = 5            # max requests per IP
+RATE_LIMIT = 30           # max requests per IP
 RATE_LIMIT_WINDOW = 60    # seconds
 
 # In-memory store for IP request timestamps
