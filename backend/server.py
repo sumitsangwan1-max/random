@@ -91,8 +91,22 @@ def extract_video_id(url: str) -> str:
     
     raise ValueError("Invalid YouTube URL")
 
+def normalize_username(name: str) -> str:
+    """
+    Normalize YouTube author names so matching is reliable
+    """
+    return (
+        name.strip()                 # remove leading/trailing spaces
+            .lstrip('@')             # remove @ if present
+            .lower()                 # case-insensitive
+    )
+
+
 def is_bot_comment(author: str, text: str) -> bool:
-    """Detect bot comments from blacklisted usernames"""
+    """
+    Detect bot comments from blacklisted usernames
+    (robust against YouTube formatting differences)
+    """
     bot_usernames = {
         '@HarryResearch-s7o', '@hindigyanworld9511', '@jimmyjk007', '@arhambothra3994',
         '@Tamatar-nk1bq', '@Perfect-os8we', '@Warrenxwarren', '@henryjames5757',
@@ -163,7 +177,9 @@ def is_bot_comment(author: str, text: str) -> bool:
         '@LostOfLearn', '@MaCeSu1132', '@StarSuperPC', '@WhereDayLast', '@LuckyDayMay',
     }
     
-    return author in bot_usernames
+author_normalized = normalize_username(author)
+
+    return author_normalized in bot_usernames
 
 def check_rate_limit(request: Request):
     ip = request.client.host
