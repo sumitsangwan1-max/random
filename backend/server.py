@@ -24,7 +24,7 @@ db = client[os.environ['DB_NAME']]
 app = FastAPI()
 
 # 🔒 Rate limiting settings
-RATE_LIMIT = 30            # max requests per IP
+RATE_LIMIT = 30           # max requests per IP
 RATE_LIMIT_WINDOW = 60    # seconds
 
 # In-memory store for IP request timestamps
@@ -66,6 +66,7 @@ class PickWinnersRequest(BaseModel):
     exclude_duplicates: bool = True
     keyword_filter: Optional[str] = None
     winner_count: int = 1
+    excluded_authors: List[str] = []  # Previously selected winners to exclude
 
 class PickWinnersResponse(BaseModel):
     winners: List[Comment]
@@ -297,6 +298,11 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
                 c for c in eligible_comments
                 if any(keyword in c.text.lower() for keyword in keywords)
             ]
+        
+        # Exclude previously selected winners
+        if request.excluded_authors:
+            excluded_set = set(request.excluded_authors)
+            eligible_comments = [c for c in eligible_comments if c.author not in excluded_set]
         
         total_eligible = len(eligible_comments)
         
