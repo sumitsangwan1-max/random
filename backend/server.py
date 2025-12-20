@@ -347,6 +347,24 @@ def is_bot_comment(author: str, text: str) -> bool:
     "@DoomFang-e",
     "@BOBPARKAWO",
     "@BrainBiteSky"
+        "@SimplyUC",
+"@gori_maheswari8994",
+"@shrivass1598",
+"@of_rice_and_men",
+"@HeyJayant",
+"@shotaro_taroo",
+"@holleythelamo5094",
+"@K1NGP1N360",
+"@radeyradeyradeyradey",
+"@HagfishTangelo",
+"@_onyourpalm",
+"@RV_kawaii",
+"@XiaoxinPad-w5y",
+"@LostOfLearn",
+"@MaCeSu1132",
+"@StarSuperPC",
+"@WhereDayLast",
+"@LuckyDayMay",
     ]
     
     # Check if author matches any bot username (case-insensitive)
