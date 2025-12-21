@@ -355,18 +355,7 @@ function App() {
                   )}
                 </Button>
 
-                {stats && (
-                  <div className="pt-4 border-t border-white/10 space-y-2 text-sm font-mono">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Eligible Comments:</span>
-                      <span className="text-foreground font-medium">{stats.total_eligible}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Filtered Out:</span>
-                      <span className="text-foreground font-medium">{stats.total_filtered}</span>
-                    </div>
-                  </div>
-                )}
+                
               </CardContent>
             </Card>
 
