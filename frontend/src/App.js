@@ -112,7 +112,7 @@ function App() {
     } finally {
       setShuffling(false);
     }
-  }, 2000);
+  }, 4000);
 };
 
   const exportWinners = () => {
