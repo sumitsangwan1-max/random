@@ -81,7 +81,7 @@ function App() {
     }
 
     setShufflingWinners(randomComments);
-  }, 150);
+  }, 100);
 
   // after 3 seconds, pick real winners
   setTimeout(async () => {
@@ -112,7 +112,7 @@ function App() {
     } finally {
       setShuffling(false);
     }
-  }, 3000);
+  }, 2000);
 };
 
   const exportWinners = () => {
