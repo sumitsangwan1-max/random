@@ -103,7 +103,8 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@jecobchristia', '@timseifart-s2p', '@Producer-p8l4y', '@VibeVisionary-y2z', '@gwagonat', '@Cricket-l4c', '@Frazer-s2z',
 '@Luck-w2q', '@MarvinagmesMarvinagnes', '@russmoore-m.2h', '@yenwallz', '@project-o8e', '@jaken-s1l', '@MaCeSu1132', '@StarSuperPC', '@WhereDayLast', '@LuckyDayMay', '@SANDESHGAMERS97',
 '@SagarSagarji-j3b', '@PhilipCharles-y9k', '@KkkJjj-j4u', '@dusabemunguadeline2848', '@MG_SUHEL_LIVE',
-'@MichaelDehinsilu-w5y', '@المغااامر', '@vinodsir2125', '@Mitti_Di_Awaaz', '@ZainabchZainabch-p8y', '@NassirHabb',
+'@MichaelDehinsilu-w5y', '@المغااامر', '@vinodsir2125', '@Mitti_Di_Awaaz', '@ZainabchZainabch-p8y', '@NassirHabb', '@Siyaaaa1', '@Pro_Rayyan1',
+'@RamlalSharma-wh6gc', '@Yaari-ep9us', '@Hottest_x_Trends', '@LealGreen', '@LaisDays', '@WhatDeal-h6j', '@DayLoad-k7t', '@LasLoMail', 
 
     }
     
@@ -288,7 +289,8 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
         '@gori_maheswari8994', '@shrivass1598', '@of_rice_and_men', '@HeyJayant',
         '@shotaro_taroo', '@holleythelamo5094', '@K1NGP1N360', '@radeyradeyradeyradey',
         '@HagfishTangelo', '@_onyourpalm', '@RV_kawaii', '@XiaoxinPad-w5y',
-        '@LostOfLearn', 
+        '@LostOfLearn', '@adadudud', '@Vishal-so3gk', '@Josegonzalez22-r7k', '@Nestormontenegro82', '@200mil6', 
+        '@GuillermoFronk', '@InsideSay1212', '@RazerBladeZ3', '@RayTrayCube', '@LencyCyC1', '@CesloLos', 
 
     }
 
