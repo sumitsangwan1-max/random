@@ -105,7 +105,12 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@SagarSagarji-j3b', '@PhilipCharles-y9k', '@KkkJjj-j4u', '@dusabemunguadeline2848', '@MG_SUHEL_LIVE',
 '@MichaelDehinsilu-w5y', '@المغااامر', '@vinodsir2125', '@Mitti_Di_Awaaz', '@ZainabchZainabch-p8y', '@NassirHabb', '@Siyaaaa1', '@Pro_Rayyan1',
 '@RamlalSharma-wh6gc', '@Yaari-ep9us', '@Hottest_x_Trends', '@LealGreen', '@LaisDays', '@WhatDeal-h6j', '@DayLoad-k7t', '@LasLoMail', 
-
+'@Ammiethebusygirl', '@Blessingewornam', '@Christinahappiness',
+'@Christianazayn', '@Clarkefaithtashalee', '@Diaryofagoodfoodlover',
+'@Emweeson', '@Fernandezhermes', '@JaneAudith', '@luandalove',
+'@Monalisawealth', '@Princessshayz', '@Shanethegreatness',
+'@StephCruzzie', '@Tuernylife', '@Valentinogeorgia',
+'@Winnerijay', 
     }
     
     return author in bot_usernames
