@@ -108,7 +108,8 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@Ammiethebusygirl', '@Blessingewornam', '@Christinahappiness',
 '@Christianazayn', '@Clarkefaithtashalee', '@Diaryofagoodfoodlover',
 '@Emweeson', '@Fernandezhermes', '@JaneAudith', '@luandalove',
-'@Monalisawealth', 
+'@Monalisawealth', '@Iconiccruz',
+'@Mbalijohnson', '@Zayybee', '@Duchess607', '@Cindysteeze', '@blessedaurora', '@Eugene_Douglas_Bennett', 
     }
     
     return author in bot_usernames
@@ -297,7 +298,11 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
         '@Shanethegreatness', '@StephCruzzie', '@Tuernylife', '@Valentinogeorgia', '@Winnerijay', '@nhanminh1447', '@PhilipDonaldCox', '@tienlam1770',
         '@EugeneBailey_9662', '@danielphilipallen1995', '@ralphwatWson',
         '@AustinMaryPerez', '@kevinbennett1972', '@TylerDennisChavez', '@larrychristianwilson18', '@CharlesWillieMorgan', '@haroldprice32',
-        '@raSndydylanmartinez', '@Nicholas.Johnny.Martinez', '@jamesjonathangonzalez1970', '@billybaker1974', 
+        '@raSndydylanmartinez', '@Nicholas.Johnny.Martinez', '@jamesjonathangonzalez1970', '@billybaker1974', '@ChadAnthonyVentures', '@Mendezz140', '@StephanieAg_',
+'@Paulrichess', '@Naommey', '@AnitaSeweje',
+'@Charlotte_good', '@Demolzhappiness', '@Nengewilliams',
+'@Maamiserwaaa', '@Emmanuelwilz', '@Ginadenzel',
+'@aishatmarcus', '@Moeta.b', 
 
  }
 
