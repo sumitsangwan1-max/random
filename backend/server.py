@@ -294,9 +294,12 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
         '@HagfishTangelo', '@_onyourpalm', '@RV_kawaii', '@XiaoxinPad-w5y',
         '@LostOfLearn', '@adadudud', '@Vishal-so3gk', '@Josegonzalez22-r7k', '@Nestormontenegro82', '@200mil6', 
         '@GuillermoFronk', '@InsideSay1212', '@RazerBladeZ3', '@RayTrayCube', '@LencyCyC1', '@CesloLos', '@Princessshayz',
-        '@Shanethegreatness', '@StephCruzzie', '@Tuernylife', '@Valentinogeorgia', '@Winnerijay', 
+        '@Shanethegreatness', '@StephCruzzie', '@Tuernylife', '@Valentinogeorgia', '@Winnerijay', '@nhanminh1447', '@PhilipDonaldCox', '@tienlam1770',
+        '@EugeneBailey_9662', '@danielphilipallen1995', '@ralphwatWson',
+        '@AustinMaryPerez', '@kevinbennett1972', '@TylerDennisChavez', '@larrychristianwilson18', '@CharlesWillieMorgan', '@haroldprice32',
+        '@raSndydylanmartinez', '@Nicholas.Johnny.Martinez', '@jamesjonathangonzalez1970', '@billybaker1974', 
 
-    }
+ }
 
     try:
         eligible_comments = request.comments.copy()
