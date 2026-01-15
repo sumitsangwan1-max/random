@@ -116,7 +116,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@Brandon-Samuel-Wright', '@aaronFruiz', '@ZacharyGaryGray.8825',
 '@stevenscottlee1976', '@DinhTa-zt2we', '@KimPhungy9n8pa_325',
 '@peterbrooks1973', '@MinhHoaaq8jk9_450', '@donaldstewart1991',
-'@GregoryJamesWright', '@GiaBaoa8pucz_908', '@seanrZoss', '@nicholas2040', '@giagg11', '@razaop3168', '@mikisoobin',
+'@GregoryJamesWright', '@GiaBaoa8pucz_908', '@seanrZoss', '@mikisoobin',
 '@eilyu', '@nyc5338', '@j_yeet', '@foodiefodder',
 '@pizza443', '@lowaves27', '@bubbly1800', '@Na-triever',
 '@yer16s', '@bubblegum9783', '@akshayramakrishnan', '@lotuspier5981',
@@ -316,7 +316,8 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
         '@aishatmarcus', '@Moeta.b', '@LostOfLearn', '@Mikasload', '@leooghost', '@Mi-qm7ug', '@popa4810', '@Botiichal', '@astrodive', '@Hirrakit',
 '@babi071', '@clover3854', '@chacha-ur6cb', '@Groovedude925', '@guillaumebarnabe998', '@Jack-i1v9c', '@music-kim1', '@audio--Bass-est',
 '@scout-mortal', '@DriveXR-e5p', '@grafire-j1o', '@ann4501', '@tommyb9144', '@amora_kyros', '@slythy9', '@SUPERxGOKU',
-'@Daxa-g1w', '@ForMusic-four', '@BigBaller989', '@maurya-1231', '@bryleewilliamson', '@starfire333', '@trini9352', '@aleczanny', '@andyliu313', '@dreamcatcher8574', '@Neko-wx3sk', 
+'@Daxa-g1w', '@ForMusic-four', '@BigBaller989', '@maurya-1231', '@bryleewilliamson', '@starfire333', '@trini9352', '@aleczanny', '@andyliu313', '@dreamcatcher8574', '@Neko-wx3sk',
+'@nicholas2040', '@giagg11', '@razaop3168',
         
 
  }
