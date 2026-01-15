@@ -121,7 +121,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@pizza443', '@lowaves27', '@bubbly1800', '@Na-triever',
 '@yer16s', '@bubblegum9783', '@akshayramakrishnan', '@lotuspier5981',
 '@guigun78', '@Ammm1233', '@shiningramrun', '@lerouge2331',
-'@16daystildripmarketing93', '@therealotaku3874', 
+'@16daystildripmarketing93', '@therealotaku3874', '@G유서아', '@G전범지연', '@원-달-예린', '@공세아44', '@차-국-현아', 
 
     }
     
@@ -316,7 +316,8 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
         '@aishatmarcus', '@Moeta.b', '@LostOfLearn', '@Mikasload', '@leooghost', '@Mi-qm7ug', '@popa4810', '@Botiichal', '@astrodive', '@Hirrakit',
 '@babi071', '@clover3854', '@chacha-ur6cb', '@Groovedude925', '@guillaumebarnabe998', '@Jack-i1v9c', '@music-kim1', '@audio--Bass-est',
 '@scout-mortal', '@DriveXR-e5p', '@grafire-j1o', '@ann4501', '@tommyb9144', '@amora_kyros', '@slythy9', '@SUPERxGOKU',
-'@Daxa-g1w', '@ForMusic-four', '@BigBaller989', '@maurya-1231', '@bryleewilliamson', '@starfire333', '@trini9352', '@aleczanny', '@andyliu313'
+'@Daxa-g1w', '@ForMusic-four', '@BigBaller989', '@maurya-1231', '@bryleewilliamson', '@starfire333', '@trini9352', '@aleczanny', '@andyliu313', '@dreamcatcher8574', '@Neko-wx3sk', 
+        
 
  }
 
