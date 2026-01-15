@@ -312,10 +312,11 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
         '@EugeneBailey_9662', '@danielphilipallen1995', '@ralphwatWson',
         '@AustinMaryPerez', '@kevinbennett1972', '@TylerDennisChavez', '@larrychristianwilson18', '@CharlesWillieMorgan', '@haroldprice32',
         '@raSndydylanmartinez', '@Nicholas.Johnny.Martinez', '@jamesjonathangonzalez1970', '@billybaker1974', '@ChadAnthonyVentures', '@Mendezz140', '@StephanieAg_',
-'@Paulrichess', '@Naommey', '@AnitaSeweje',
-'@Charlotte_good', '@Demolzhappiness', '@Nengewilliams',
-'@Maamiserwaaa', '@Emmanuelwilz', '@Ginadenzel',
-'@aishatmarcus', '@Moeta.b', 
+        '@Paulrichess', '@Naommey', '@AnitaSeweje', '@Charlotte_good', '@Demolzhappiness', '@Nengewilliams', '@Maamiserwaaa', '@Emmanuelwilz', '@Ginadenzel',
+        '@aishatmarcus', '@Moeta.b', '@LostOfLearn', '@Mikasload', '@leooghost', '@Mi-qm7ug', '@popa4810', '@Botiichal', '@astrodive', '@Hirrakit',
+'@babi071', '@clover3854', '@chacha-ur6cb', '@Groovedude925', '@guillaumebarnabe998', '@Jack-i1v9c', '@music-kim1', '@audio--Bass-est',
+'@scout-mortal', '@DriveXR-e5p', '@grafire-j1o', '@ann4501', '@tommyb9144', '@amora_kyros', '@slythy9', '@SUPERxGOKU',
+'@Daxa-g1w', '@ForMusic-four', '@BigBaller989', '@maurya-1231', '@bryleewilliamson', '@starfire333', '@trini9352', '@aleczanny', '@andyliu313'
 
  }
 
