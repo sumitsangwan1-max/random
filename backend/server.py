@@ -317,9 +317,7 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@babi071', '@clover3854', '@chacha-ur6cb', '@Groovedude925', '@guillaumebarnabe998', '@Jack-i1v9c', '@music-kim1', '@audio--Bass-est',
 '@scout-mortal', '@DriveXR-e5p', '@grafire-j1o', '@ann4501', '@tommyb9144', '@amora_kyros', '@slythy9', '@SUPERxGOKU',
 '@Daxa-g1w', '@ForMusic-four', '@BigBaller989', '@maurya-1231', '@bryleewilliamson', '@starfire333', '@trini9352', '@aleczanny', '@andyliu313', '@dreamcatcher8574', '@Neko-wx3sk',
-'@nicholas2040', '@giagg11', '@razaop3168', '@G전범지연', '@원-달-예린', '@공세아44', '@차-국-현아', '@Carlos001-1', '@charlynestyles', '@Zozorijo', '@Alex-wallzy', '@dunknmoj', '@Yufinn', '@daredevil-he', '@jinji_hi',
-'@fatu6357', '@rmsaeed', '@fairyclo', '@blankedoit', '@Sayee9007', '@shinku76', '@bohu6o', '@cortex4093',
-'@KwanruetaiHee', '@garnx', 
+'@nicholas2040', '@giagg11', '@razaop3168', '@G전범지연', '@원-달-예린', '@공세아44', '@차-국-현아', 
         
     }
 
