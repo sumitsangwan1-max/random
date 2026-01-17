@@ -121,7 +121,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@pizza443', '@lowaves27', '@bubbly1800', '@Na-triever',
 '@yer16s', '@bubblegum9783', '@akshayramakrishnan', '@lotuspier5981',
 '@guigun78', '@Ammm1233', '@shiningramrun', '@lerouge2331',
-'@16daystildripmarketing93', '@therealotaku3874', '@G유서아', 
+'@16daystildripmarketing93', '@therealotaku3874', '@G유서아', '@minan7754', 
 
     }
     
