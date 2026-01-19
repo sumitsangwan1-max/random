@@ -122,8 +122,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@yer16s', '@bubblegum9783', '@akshayramakrishnan', '@lotuspier5981',
 '@guigun78', '@Ammm1233', '@shiningramrun', '@lerouge2331',
 '@16daystildripmarketing93', '@therealotaku3874', '@G유서아', '@minan7754', 
-
-    }
+}
     
     return author in bot_usernames
 
@@ -320,13 +319,7 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@nicholas2040', '@giagg11', '@razaop3168', '@G전범지연', '@원-달-예린', '@공세아44', '@차-국-현아', '@MadeInLuke', '@pook-d5y', '@MikeStrangers-c1j', '@LPD-67',
 '@taescake', '@garnx', '@cortex4093', '@shinku76', '@Sayee9007', '@blankedoit', '@Yufinn', '@Alex-wallzy', '@Zozorijo', '@charlynestyles', '@Carlos001-1', 
 
-
-
-
-
-
-        
-    }
+ }
 
     try:
         eligible_comments = request.comments.copy()
