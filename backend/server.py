@@ -124,8 +124,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@16daystildripmarketing93', '@therealotaku3874', '@G유서아', '@minan7754',
 '@user-iz6tj9on2k', '@test6-t7h', '@niamagpie', '@marcingrail', '@jacelhy', '@moniger7', '@centralparksaga', '@dunknmoj', '@temmy1937', 
 '@calwixx', '@AlecHuel', '@sakailansi', '@chase20cv', '@otisong', '@fingercutz', '@limpehuhlui', '@spyrocrow', '@maximuscts', '@gautim4u', 
-'@donottech', '@mizermira', '@shirazmarcel', '@devilselbow69', '@anaarevalo8425', '@therealpapparich', '@superguppyme', '@Thatlakelife', '@oLi102', 
-'@jimmmm', 
+'@donottech', '@jimmmm', 
 
 }
     
@@ -324,7 +323,7 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@nicholas2040', '@giagg11', '@razaop3168', '@G전범지연', '@원-달-예린', '@공세아44', '@차-국-현아', '@MadeInLuke', '@pook-d5y', '@MikeStrangers-c1j', '@LPD-67', '@taescake', '@garnx', '@cortex4093',
 '@shinku76', '@Sayee9007', '@blankedoit', '@Yufinn', '@Alex-wallzy', '@Zozorijo', '@charlynestyles', '@Carlos001-1', '@dunknmoj', '@daredevil-he', '@jinji_hi', '@fatu6357',
 '@rmsaeed', '@fairyclo', '@bohu6o', '@KwanruetaiHee', '@rmbvlog6551', '@sarahkat26', '@LinhVu-jm8mu', '@lanasotherland', '@silvivargas1426', '@BellaKT87', '@mteresaemond', '@seanleau', '@FigCloud', '@RavenRizz777',
-'@jacenbarkoff', 
+'@jacenbarkoff', '@mizermira', '@shirazmarcel', '@devilselbow69', '@anaarevalo8425', '@therealpapparich', '@superguppyme', '@Thatlakelife', '@oLi102',
         
  }
 
