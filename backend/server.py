@@ -126,7 +126,8 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@calwixx', '@AlecHuel', '@sakailansi', '@chase20cv', '@otisong', '@fingercutz', '@limpehuhlui', '@spyrocrow', '@maximuscts', '@gautim4u', 
 '@donottech', '@jimmmm', '@lunaart09', '@MoenierHendricks-m5e', '@razaop3168', '@VictorHugo2526-p4n', '@KarolUyan-d8z', '@AngelesCarrillo-c8x', '@RaulGonzales-q2l', '@BraumPoro-x9k', '@Laura79367', '@Alfredo_nuñez', 
 '@HumbertoGomez-k6l', '@pruebabienvenidamoneda', '@SantiagoInfa-r6w', '@MarthaCordero-b9v', 
- '@almejandro-q3r', '@CapsG2', '@MariannaParra-v9q', '@Josepachin-o7m', '@EmiliaGómezdeSandoval', '@Andres__Cordero-m3o', '@AnitaAramcito-o3b',
+ '@almejandro-q3r', '@CapsG2', '@MariannaParra-v9q', '@Josepachin-o7m', '@EmiliaGómezdeSandoval', '@Andres__Cordero-m3o', '@AnitaAramcito-o3b', '@arpit-18-a', 
+
 
 }
     
@@ -314,18 +315,24 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
         '@LostOfLearn', '@adadudud', '@Vishal-so3gk', '@Josegonzalez22-r7k', '@Nestormontenegro82', '@200mil6', 
         '@GuillermoFronk', '@InsideSay1212', '@RazerBladeZ3', '@RayTrayCube', '@LencyCyC1', '@CesloLos', '@Princessshayz',
         '@Shanethegreatness', '@StephCruzzie', '@Tuernylife', '@Valentinogeorgia', '@Winnerijay', '@nhanminh1447', '@PhilipDonaldCox', '@tienlam1770',
-        '@EugeneBailey_9662', '@danielphilipallen1995', '@ralphwatWson',
-        '@AustinMaryPerez', '@kevinbennett1972', '@TylerDennisChavez', '@larrychristianwilson18', '@CharlesWillieMorgan', '@haroldprice32',
-        '@raSndydylanmartinez', '@Nicholas.Johnny.Martinez', '@jamesjonathangonzalez1970', '@billybaker1974', '@ChadAnthonyVentures', '@Mendezz140', '@StephanieAg_',
-        '@Paulrichess', '@Naommey', '@AnitaSeweje', '@Charlotte_good', '@Demolzhappiness', '@Nengewilliams', '@Maamiserwaaa', '@Emmanuelwilz', '@Ginadenzel',
-        '@aishatmarcus', '@Moeta.b', '@LostOfLearn', '@Mikasload', '@leooghost', '@Mi-qm7ug', '@popa4810', '@Botiichal', '@astrodive', '@Hirrakit',
+        '@EugeneBailey_9662', '@danielphilipallen1995', '@ralphwatWson', '@AustinMaryPerez', '@kevinbennett1972', 
+'@TylerDennisChavez', '@larrychristianwilson18', '@CharlesWillieMorgan', '@haroldprice32',
+'@raSndydylanmartinez', '@Nicholas.Johnny.Martinez', '@jamesjonathangonzalez1970', '@billybaker1974', '@ChadAnthonyVentures', '@Mendezz140', '@StephanieAg_',
+'@Paulrichess', '@Naommey', '@AnitaSeweje', '@Charlotte_good', '@Demolzhappiness', '@Nengewilliams', '@Maamiserwaaa', '@Emmanuelwilz', '@Ginadenzel',
+'@aishatmarcus', '@Moeta.b', '@LostOfLearn', '@Mikasload', '@leooghost', '@Mi-qm7ug', '@popa4810', '@Botiichal', '@astrodive', '@Hirrakit',
 '@babi071', '@clover3854', '@chacha-ur6cb', '@Groovedude925', '@guillaumebarnabe998', '@Jack-i1v9c', '@music-kim1', '@audio--Bass-est',
 '@scout-mortal', '@DriveXR-e5p', '@grafire-j1o', '@ann4501', '@tommyb9144', '@amora_kyros', '@slythy9', '@SUPERxGOKU',
-'@Daxa-g1w', '@ForMusic-four', '@BigBaller989', '@maurya-1231', '@bryleewilliamson', '@starfire333', '@trini9352', '@aleczanny', '@andyliu313', '@dreamcatcher8574', '@Neko-wx3sk',
-'@nicholas2040', '@giagg11', '@razaop3168', '@G전범지연', '@원-달-예린', '@공세아44', '@차-국-현아', '@MadeInLuke', '@pook-d5y', '@MikeStrangers-c1j', '@LPD-67', '@taescake', '@garnx', '@cortex4093',
-'@shinku76', '@Sayee9007', '@blankedoit', '@Yufinn', '@Alex-wallzy', '@Zozorijo', '@charlynestyles', '@Carlos001-1', '@dunknmoj', '@daredevil-he', '@jinji_hi', '@fatu6357',
-'@rmsaeed', '@fairyclo', '@bohu6o', '@KwanruetaiHee', '@rmbvlog6551', '@sarahkat26', '@LinhVu-jm8mu', '@lanasotherland', '@silvivargas1426', '@BellaKT87', '@mteresaemond', '@seanleau', '@FigCloud', '@RavenRizz777',
-'@jacenbarkoff', '@mizermira', '@shirazmarcel', '@devilselbow69', '@anaarevalo8425', '@therealpapparich', '@superguppyme', '@Thatlakelife', '@oLi102', '@Ahdrea_B', '@maxiclarkson', '@megnifico', '@MrCollect',
+'@Daxa-g1w', '@ForMusic-four', '@BigBaller989', '@maurya-1231', '@bryleewilliamson', '@starfire333', '@trini9352', 
+'@aleczanny', '@andyliu313', '@dreamcatcher8574', '@Neko-wx3sk',
+'@nicholas2040', '@giagg11', '@razaop3168', '@G전범지연', '@원-달-예린', '@공세아44', '@차-국-현아', 
+'@MadeInLuke', '@pook-d5y', '@MikeStrangers-c1j', '@LPD-67', '@taescake', '@garnx', '@cortex4093',
+'@shinku76', '@Sayee9007', '@blankedoit', '@Yufinn', '@Alex-wallzy', '@Zozorijo', '@charlynestyles', 
+'@Carlos001-1', '@dunknmoj', '@daredevil-he', '@jinji_hi', '@fatu6357',
+'@rmsaeed', '@fairyclo', '@bohu6o', '@KwanruetaiHee', '@rmbvlog6551', '@sarahkat26', '@LinhVu-jm8mu',
+'@lanasotherland', '@silvivargas1426', '@BellaKT87', '@mteresaemond', '@seanleau', '@FigCloud', '@RavenRizz777',
+'@jacenbarkoff', '@mizermira', '@shirazmarcel', '@devilselbow69', '@anaarevalo8425', '@therealpapparich', '@superguppyme',
+'@Thatlakelife', '@oLi102', '@Ahdrea_B', '@maxiclarkson', '@megnifico', '@MrCollect', '@emmascore',
+        
         
         
  }
