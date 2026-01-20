@@ -120,7 +120,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@eilyu', '@nyc5338', '@j_yeet', '@foodiefodder',
 '@pizza443', '@lowaves27', '@bubbly1800', '@Na-triever',
 '@yer16s', '@bubblegum9783', '@akshayramakrishnan', '@lotuspier5981',
-'@guigun78', '@Ammm1233', '@shiningramrun', '@lerouge2331',
+'@guigun78', '@Ammm1233', '@shiningramrun', '@lerouge2331', '@BrianMorris_9415', '@adamchavez1961',
 '@16daystildripmarketing93', '@therealotaku3874', '@G유서아', '@minan7754',
 '@user-iz6tj9on2k', '@test6-t7h', '@niamagpie', '@marcingrail', '@jacelhy', '@moniger7', '@centralparksaga', '@dunknmoj', '@temmy1937', 
 '@calwixx', '@AlecHuel', '@sakailansi', '@chase20cv', '@otisong', '@fingercutz', '@limpehuhlui', '@spyrocrow', '@maximuscts', '@gautim4u', 
@@ -351,7 +351,7 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@Adriamnatosramon', '@Skryling', '@jakkecruz', '@driddesantos1762', '@adrians8024', '@jimmmm', '@micheel1958.', '@markstorete', 
 '@Nehemiaslnvierte', '@biripochi9182', '@benjatam10', '@XQATR', '@karinaveracruz', '@Lilianaecliaceve', '@dorcassimon589', '@joseph18e', '@MarcoMorettig20', 
 '@MatteoDeLuca-10', '@andresanchez343', '@shankzsxc', '@sebastiian9885', '@lorenzogento', '@markguenim9114', '@yeisonmartineez', '@brianhutchinson7683', 
-'@moreenogua', '@DelmarClifton-u7n', '@laura_amydog', '@kimberlyholt3056', '@LisaDufault-q2l', '@Brook-k6d',
+'@moreenogua', '@DelmarClifton-u7n', '@laura_amydog', '@kimberlyholt3056', '@LisaDufault-q2l', '@Brook-k6d', '@markbriHanthompson', '@thanhhữu51', '@Eric-Jordan-Miller', 
 
 
 }
