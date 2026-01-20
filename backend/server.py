@@ -337,7 +337,7 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@jacenbarkoff', '@mizermira', '@shirazmarcel', '@devilselbow69', '@anaarevalo8425', '@therealpapparich', '@superguppyme',
 '@Thatlakelife', '@oLi102', '@Ahdrea_B', '@maxiclarkson', '@megnifico', '@MrCollect', '@emmascore', '@BlogeyPiper', '@JmyladyHandcrafted', '@yenwallz', 
 '@patticulver442', '@loyayyay', '@blureader1164', '@christinafredette8071', '@GOJ739', '@janetrivera1346', '@barbwolfrey1339', 
-'@Mb-hdk-937', '@tray2811', '@maopoamy', '@googoobird', 
+'@Mb-hdk-937', '@tray2811', '@maopoamy', '@googoobird', '@epiphx', '@lumerionOG',
 '@Mabelosorio-s5o', '@MelissaGuzman-s2n', '@ricardomaster-q2l', '@mariaeugenia25-w6b', '@LudyRamirez-u3m', '@YolandaSopo-x4g', '@lunaart09', 
 '@MoenierHendricks-m5e', '@VictorHugo2526-p4n', '@KarolUyan-d8z', '@AngelesCarrillo-c8x', '@RaulGonzales-q2l', '@BraumPoro-x9k', '@Laura79367', 
 '@Alfredo_nuñez', '@HumbertoGomez-k6l', '@pruebabienvenidamoneda', '@SantiagoInfa-r6w', '@MarthaCordero-b9v', '@almejandro-q3r', '@CapsG2', 
