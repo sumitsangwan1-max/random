@@ -128,7 +128,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@AngelesCarrillo-c8x', '@RaulGonzales-q2l', '@BraumPoro-x9k', '@Laura79367', '@Alfredo_nuñez', 
 '@HumbertoGomez-k6l', '@pruebabienvenidamoneda', '@SantiagoInfa-r6w', '@MarthaCordero-b9v', 
  '@almejandro-q3r', '@CapsG2', '@MariannaParra-v9q', '@Josepachin-o7m', '@EmiliaGómezdeSandoval', 
-'@Andres__Cordero-m3o', '@AnitaAramcito-o3b', '@arpit-18-a', '@nivesworx', '@steek96', 
+'@Andres__Cordero-m3o', '@AnitaAramcito-o3b', '@arpit-18-a', '@nivesworx', '@steek96', '@grafire-j1o', '@EmiS11522', '@novona6856',
 
 
 
@@ -355,7 +355,7 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@Nehemiaslnvierte', '@biripochi9182', '@benjatam10', '@XQATR', '@karinaveracruz', '@Lilianaecliaceve', '@dorcassimon589', '@joseph18e', '@MarcoMorettig20', 
 '@MatteoDeLuca-10', '@andresanchez343', '@shankzsxc', '@sebastiian9885', '@lorenzogento', '@markguenim9114', '@yeisonmartineez', '@brianhutchinson7683', 
 '@moreenogua', '@DelmarClifton-u7n', '@laura_amydog', '@kimberlyholt3056', '@LisaDufault-q2l', '@Brook-k6d', '@markbriHanthompson', '@thanhhữu51', '@Eric-Jordan-Miller', 
-'@fufuxia5' '@darrensmith9564', 
+'@fufuxia5' '@darrensmith9564', '@thymscd87', '@dancingdo.7', '@ann4501', 
 
 
 }
