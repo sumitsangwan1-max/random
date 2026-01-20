@@ -334,12 +334,10 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@Thatlakelife', '@oLi102', '@Ahdrea_B', '@maxiclarkson', '@megnifico', '@MrCollect', '@emmascore', '@BlogeyPiper', '@JmyladyHandcrafted', '@yenwallz', 
 '@patticulver442', '@loyayyay', '@blureader1164', '@christinafredette8071', '@GOJ739', '@janetrivera1346', '@barbwolfrey1339', 
 '@Mb-hdk-937', '@tray2811', '@maopoamy', '@googoobird', 
+'@Mabelosorio-s5o', '@MelissaGuzman-s2n', '@ricardomaster-q2l', '@mariaeugenia25-w6b', 
 
 
-        
-        
-        
- }
+}
 
     try:
         eligible_comments = request.comments.copy()
