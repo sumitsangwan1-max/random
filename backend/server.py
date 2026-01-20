@@ -332,7 +332,10 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@lanasotherland', '@silvivargas1426', '@BellaKT87', '@mteresaemond', '@seanleau', '@FigCloud', '@RavenRizz777',
 '@jacenbarkoff', '@mizermira', '@shirazmarcel', '@devilselbow69', '@anaarevalo8425', '@therealpapparich', '@superguppyme',
 '@Thatlakelife', '@oLi102', '@Ahdrea_B', '@maxiclarkson', '@megnifico', '@MrCollect', '@emmascore', '@BlogeyPiper', '@JmyladyHandcrafted', '@yenwallz', 
-'@patticulver442', 
+'@patticulver442', '@loyayyay', '@blureader1164', '@christinafredette8071', '@GOJ739', '@janetrivera1346', '@barbwolfrey1339', 
+'@Mb-hdk-937', '@tray2811', '@maopoamy', 
+
+
         
         
         
