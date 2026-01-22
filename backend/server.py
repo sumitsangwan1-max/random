@@ -133,7 +133,8 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@glitchforgeat1', '@ArxTun', '@vickygarotayt4612', '@traceeperryman8112', '@coachwilson5431', '@Gizz-u2o', '@HaroldPerez_4910', '@GeraldBryanRobinson', 
 '@bradleyphilipharris41', '@keithjosephdavis1962', '@PatrickRoberts_8945', '@phungtu9814', '@vanhainguyen-mf3eq', '@linhchiluc3882', 
 '@timothydouglasjohnson1982', '@Douglas_Edward_White', '@ronaldfrankgray33', '@douglaspeterson75', '@RyanBradleyRodriguez.3688', 
-'@MatthewChavez_8025', '@JustinBobbyWilliams.3950', '@phươngngưukim65', '@zacharynelsFon', '@trâmđức15', '@JuanElizabethWatson', 
+'@MatthewChavez_8025', '@JustinBobbyWilliams.3950', '@phươngngưukim65', '@zacharynelsFon', '@trâmđức15', '@JuanElizabethWatson', '@gplays1206', 
+'@Fanatic_Plays', '@Colectivecoins'
 
 }
     
