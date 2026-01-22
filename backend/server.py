@@ -130,10 +130,10 @@ def is_bot_comment(author: str, text: str) -> bool:
  '@almejandro-q3r', '@CapsG2', '@MariannaParra-v9q', '@Josepachin-o7m', '@EmiliaGómezdeSandoval', 
 '@Andres__Cordero-m3o', '@AnitaAramcito-o3b', '@arpit-18-a', '@nivesworx', '@steek96', '@grafire-j1o', '@EmiS11522', '@JayceArcane', 
 '@DravenLap', '@AnaMar-o2k-m2g', '@Ateneoxd-x9b', '@RobertoPineda-w7i', '@glitchforgeat1', '@thecomicnerd8', '@edwardjuliansandoval8757', 
-'@glitchforgeat1', '@ArxTun', '@vickygarotayt4612', '@traceeperryman8112', '@coachwilson5431', '@Gizz-u2o', 
-
-
-
+'@glitchforgeat1', '@ArxTun', '@vickygarotayt4612', '@traceeperryman8112', '@coachwilson5431', '@Gizz-u2o', '@HaroldPerez_4910', '@GeraldBryanRobinson', 
+'@bradleyphilipharris41', '@keithjosephdavis1962', '@PatrickRoberts_8945', '@phungtu9814', '@vanhainguyen-mf3eq', '@linhchiluc3882', 
+'@timothydouglasjohnson1982', '@Douglas_Edward_White', '@ronaldfrankgray33', '@douglaspeterson75', '@RyanBradleyRodriguez.3688', 
+'@MatthewChavez_8025', '@JustinBobbyWilliams.3950', '@phươngngưukim65', '@zacharynelsFon', '@trâmđức15', '@JuanElizabethWatson', 
 
 }
     
@@ -359,8 +359,8 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@MatteoDeLuca-10', '@andresanchez343', '@shankzsxc', '@sebastiian9885', '@lorenzogento', '@markguenim9114', '@yeisonmartineez', '@brianhutchinson7683', 
 '@moreenogua', '@DelmarClifton-u7n', '@laura_amydog', '@kimberlyholt3056', '@LisaDufault-q2l', '@Brook-k6d', '@markbriHanthompson', '@thanhhữu51', '@Eric-Jordan-Miller', 
 '@fufuxia5' '@darrensmith9564', '@thymscd87', '@dancingdo.7', '@ann4501', '@Nahiiden', '@tsukisytcorner', '@maiionpar', '@j_yeet', '@foodiefodder', '@FakerT1-s9e', 
-'@JavierSierra-v2u', '@ReatigaMon', '@Kevingil-w6n', '@Aynah-v8j', '@Hua770', '@Mowa-e6i', '@vintagebookshelves',
-
+'@JavierSierra-v2u', '@ReatigaMon', '@Kevingil-w6n', '@Aynah-v8j', '@Hua770', '@Mowa-e6i', '@vintagebookshelves', '@trouble0702', '@larrypatriciamiller35', 
+'@DungLe_7uu4s5', '@PaulLawrenceRichardson', '@gregorynoahjames17', '@russellwilson1962', '@brucethompson1981', 
 
 
 }
