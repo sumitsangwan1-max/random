@@ -141,7 +141,8 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@alil-r1k', '@TaherTaherr-k5w', '@Business_In_Motion', '@boichalambalmayum8060', '@SeyaViw', '@وليدقاسم-ب1ن', '@Sfg-t1b', '@DhananjayKumarBauri', 
 '@hasansaoud4061', '@AjimRayma-ed1jr', '@AllaAlla-v4w', '@aliali33-b7j', '@Jharana-o9k', '@YasmineAballi', '@AsimKing-w9w', '@BoshraAlakel', 
 '@owowowowowowowowowow2956', '@alihssn9670', '@MostafaMhana-s1e', '@zkariaAlahmad', '@TarekTarek-n5s4c', '@HimanshuBansal-p3g', '@ShahedAlassaf-k4t5b', 
-'@lovelyhoney-e6w', '@alijafari-bo4hf', '@HamzaSamy-e8x', '@سجادسجاد-خ9د3و', '@forhadsylhet', '@KamalTiruwa-gz2gt', '@MystorageHarish', '@EliIcic',
+'@lovelyhoney-e6w', '@alijafari-bo4hf', '@HamzaSamy-e8x', '@سجادسجاد-خ9د3و', '@forhadsylhet', '@KamalTiruwa-gz2gt', '@MystorageHarish', '@EliIcic', '@ZenithZoneTag' 
+'@Valkyee', '@SilenTrigger2', 
 
 }
     
