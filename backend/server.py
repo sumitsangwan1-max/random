@@ -167,7 +167,8 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@joseclark1993', '@ChristopherPaulAdams', '@JohnnyGabrielWright', '@Johnny-Mark-Sanders', '@Timothy_Roberts', '@ChristianScottCarter_4963', 
 '@Carl_Lynn_Nelson', '@josedanielmenXdoza', '@TerryJosephBrown_3308', '@RalphFrankGreen', '@albertmurNphy', '@EdwardJimenez-x3o', '@joshualee2003', 
 '@AlanGaryHughes', '@joshuahernandez1996', '@JordanMartinez_3103', '@Vincent_Charles_Green', '@Lawrence_Joshua_Taylor', '@KennethDonaldSanders', 
-'@KeithAdamMartin', '@勇輝-小野', '@TerryRalphHughes_8993', '@seanchavez2008', '@dylankelly1988', '@seanalbertking2000', '@josemyers1952', 
+'@KeithAdamMartin', '@勇輝-小野', '@TerryRalphHughes_8993', '@seanchavez2008', '@dylankelly1988', '@seanalbertking2000', '@josemyers1952', '@Mira-c8l4k', 
+'@Bheem-god', '@FamilyGuyGuru101', 
 
 
 
@@ -408,7 +409,7 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@ManishaNepali-n6l', '@AbeerZayzafoun', '@JohnsonCoach-z7b', '@josegomez-xh8yr', '@ميزرميزرعمر', '@RiteshKumar-qe8nl', '@MKDADAli-v6j', '@GuddiSaini-u3l', 
 '@Cry0Spectre', '@CrashPandaBoo', '@josWekeithturner', '@AdamChristianParker', '@Henry.Arthur.Gonzalez', '@SeanPrice-4713', '@BillyGomez_3018', '@stevenallen2008', 
 '@WilliamCampbell_8011', '@PatrickHoward_7021', '@Nethansanders', '@GregoryNathanSanchez', '@LouisMatthewGray', '@ericwalterchavez1953', '@randYyparker', 
-'@Ethan-Douglas-Sanchez', '@dylanmoUrris', '@Frank-Paul-Jimenez', 
+'@Ethan-Douglas-Sanchez', '@dylanmoUrris', '@Frank-Paul-Jimenez', '@paparapapopopo', '@ensetrump', '@D-moneky-luffy', 
         
 }
 
