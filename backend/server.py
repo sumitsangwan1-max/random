@@ -401,9 +401,7 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@t.j.poland2480', '@jodyalbert3426', '@andrewmiller6480', 
 
 '@JuanaSilviaPerez', '@Jebussallin', '@JetEarlewood', '@jayem1826', '@LaxmaiahTalari', '@RobInCasinos2.0', '@luxuryondemand', 
-'@danielllllk32087', '@Scott_Wheat', '@mikeperez114', '@Thomas-c8w4l', '@azdirtbag1', '@michaelg.redman5740', '@richiebeene', 
-'@Keiceee88', '@ptbngoc45', '@KENTURTLES671', '@vivnaidoo7900', '@MichaelGates-b9z', '@bryanjohnson6619', '@Tobez21', '@AnimalHouse3323', 
-'@shannondupont3051', '@mhmad131', '@RamkrishunMukhiya1', '@fatihabeloufa766', '@Total_gamingz_m', '@MohamedKamil-c9d', '@gamigchannel-kartik', 
+'@danielllllk32087', '@Scott_Wheat', '@mikeperez114', '@mhmad131', '@RamkrishunMukhiya1', '@fatihabeloufa766', '@Total_gamingz_m', '@MohamedKamil-c9d', '@gamigchannel-kartik', 
 '@ANSH-8018', '@MoumenDj-i3i', '@HappyGaming7342', '@HahdeAli', '@ruthvik-b8k', '@Parmesh-rn3yz', '@NarenderduttDutt', '@freefirelover-l5v', 
 '@RaviKumar-e9k4z', '@stofalstif8427', '@MohammedAsri-u7l', '@pawanptelpawanptel290', '@NikhilDubey-tw6xu', '@MoeenShah-t8p', '@BLACK-444-r8i', 
 '@Bandeirasoares', '@comedyshow-m8m', '@team_01_comedy', '@BatoulAskar-e3o', '@NileshParmar-w5j7w', '@RajlodhaRajlodha-q6g', '@Marianny-e6n', 
