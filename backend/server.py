@@ -142,7 +142,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@hasansaoud4061', '@AjimRayma-ed1jr', '@AllaAlla-v4w', '@aliali33-b7j', '@Jharana-o9k', '@YasmineAballi', '@AsimKing-w9w', '@BoshraAlakel', 
 '@owowowowowowowowowow2956', '@alihssn9670', '@MostafaMhana-s1e', '@zkariaAlahmad', '@TarekTarek-n5s4c', '@HimanshuBansal-p3g', '@ShahedAlassaf-k4t5b', 
 '@lovelyhoney-e6w', '@alijafari-bo4hf', '@HamzaSamy-e8x', '@سجادسجاد-خ9د3و', '@forhadsylhet', '@KamalTiruwa-gz2gt', '@MystorageHarish', '@EliIcic', '@ZenithZoneTag', 
-'@Valkyee', '@SilenTrigger2', 
+'@Valkyee', '@SilenTrigger2', '@Andi.Davenport', 
 '@kunit3692', '@zaviyar693', '@budgetshop7700', '@readhindibook', '@9xmxm', '@harryMXmedia', '@EmilyLawsonYT', 
 '@JamesWhitakerjm', '@alaasalti', '@Alloz111', '@anwar_919', '@ClaudeBayizere', '@nomanalibhai8743', '@Wayal-u5r', 
 '@MyoThein-g2z', '@محمدالمعزوز-ط7ظ4ع', '@kirakira-u6m8k', '@HggdVhhug', '@NarendraNarendra-o3x8r', '@PuraKorpo2060', '@PauloAndrade-qh5vo', 
