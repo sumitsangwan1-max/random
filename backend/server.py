@@ -162,7 +162,13 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@TokolohoPaulMalothoane-t2r', '@saidSaid-v8u6z', '@SergioRodríguez-j8b5q', '@zyk908', '@kingofjohar-rf5ru', '@hitenmehta2222', '@AbziyaShaikh', 
 '@glendal17', '@tusiimeronald496', '@BabalwaKuze', '@happymukhi3019', '@keerthianusha7835', '@20900.', '@calebayuba1866', 
 '@AlexsandroAlex-ct3iu', '@KrupaDasari-gz4vy', '@MgPicardal', '@AmalSutopo-f7c', '@باقرالساعدي-ب2ت', '@qadeerali-f1e', '@NaomiBarnabas-x6i', 
-'@nkemakolamkingsleyadiaso1409', '@rolexff-b2k-jr', '@المسلم-ق8ب', '@Cheff22-k', '@GODGAM1NG1', 
+'@nkemakolamkingsleyadiaso1409', '@rolexff-b2k-jr', '@المسلم-ق8ب', '@Cheff22-k', '@GODGAM1NG1', '@RogerJonathanClark_395', '@LouisLynnOrtiz', 
+'@geraldfrankanderson2001', '@AnthonyJosephYoung_9270', '@AdamAaronCruz', '@AndrewJuanGarcia', '@alanroberts1992', '@ScottAllen-2084', 
+'@joseclark1993', '@ChristopherPaulAdams', '@JohnnyGabrielWright', '@Johnny-Mark-Sanders', '@Timothy_Roberts', '@ChristianScottCarter_4963', 
+'@Carl_Lynn_Nelson', '@josedanielmenXdoza', '@TerryJosephBrown_3308', '@RalphFrankGreen', '@albertmurNphy', '@EdwardJimenez-x3o', '@joshualee2003', 
+'@AlanGaryHughes', '@joshuahernandez1996', '@JordanMartinez_3103', '@Vincent_Charles_Green', '@Lawrence_Joshua_Taylor', '@KennethDonaldSanders', 
+'@KeithAdamMartin', '@勇輝-小野', '@TerryRalphHughes_8993', '@seanchavez2008', '@dylankelly1988', '@seanalbertking2000', '@josemyers1952', 
+
 
 
 
@@ -402,7 +408,9 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@RaviKumar-e9k4z', '@stofalstif8427', '@MohammedAsri-u7l', '@pawanptelpawanptel290', '@NikhilDubey-tw6xu', '@MoeenShah-t8p', '@BLACK-444-r8i', 
 '@Bandeirasoares', '@comedyshow-m8m', '@team_01_comedy', '@BatoulAskar-e3o', '@NileshParmar-w5j7w', '@RajlodhaRajlodha-q6g', '@Marianny-e6n', 
 '@ManishaNepali-n6l', '@AbeerZayzafoun', '@JohnsonCoach-z7b', '@josegomez-xh8yr', '@ميزرميزرعمر', '@RiteshKumar-qe8nl', '@MKDADAli-v6j', '@GuddiSaini-u3l', 
-'@Cry0Spectre', '@CrashPandaBoo', 
+'@Cry0Spectre', '@CrashPandaBoo', '@josWekeithturner', '@AdamChristianParker', '@Henry.Arthur.Gonzalez', '@SeanPrice-4713', '@BillyGomez_3018', '@stevenallen2008', 
+'@WilliamCampbell_8011', '@PatrickHoward_7021', '@Nethansanders', '@GregoryNathanSanchez'
+        
 }
 
     try:
