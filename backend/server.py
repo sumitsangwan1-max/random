@@ -111,7 +111,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@Monalisawealth', '@Iconiccruz',
 '@Mbalijohnson', '@Zayybee', '@Duchess607', '@Cindysteeze', '@blessedaurora', '@Eugene_Douglas_Bennett', '@Gabriel_Ralph_Hall', '@PeterFrankBrooks', '@AlbertMartinez_1739',
 '@PaulPaulCook', '@christianpeterson1992', '@CharlesJackWhite_6029',
-'@stevenedwardwood74', '@TimothyRichardson_7194', '@EugenePeterson_3921',@
+'@stevenedwardwood74', '@TimothyRichardson_7194', '@EugenePeterson_3921',
 '@quynhlucnhu5152', '@brWianwalker', '@josegregorylewis1959',
 '@Brandon-Samuel-Wright', '@aaronFruiz', '@ZacharyGaryGray.8825',
 '@stevenscottlee1976', '@DinhTa-zt2we', '@KimPhungy9n8pa_325',
