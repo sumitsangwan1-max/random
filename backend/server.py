@@ -111,7 +111,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@Monalisawealth', '@Iconiccruz',
 '@Mbalijohnson', '@Zayybee', '@Duchess607', '@Cindysteeze', '@blessedaurora', '@Eugene_Douglas_Bennett', '@Gabriel_Ralph_Hall', '@PeterFrankBrooks', '@AlbertMartinez_1739',
 '@PaulPaulCook', '@christianpeterson1992', '@CharlesJackWhite_6029',
-'@stevenedwardwood74', '@TimothyRichardson_7194', '@EugenePeterson_3921',
+'@stevenedwardwood74', '@TimothyRichardson_7194', '@EugenePeterson_3921',@
 '@quynhlucnhu5152', '@brWianwalker', '@josegregorylewis1959',
 '@Brandon-Samuel-Wright', '@aaronFruiz', '@ZacharyGaryGray.8825',
 '@stevenscottlee1976', '@DinhTa-zt2we', '@KimPhungy9n8pa_325',
@@ -136,7 +136,12 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@MatthewChavez_8025', '@JustinBobbyWilliams.3950', '@phươngngưukim65', '@zacharynelsFon', '@trâmđức15', '@JuanElizabethWatson', '@gplays1206', 
 '@Fanatic_Plays', '@Colectivecoins', 
 '@arhambothra3994', '@henryjames5757', '@SurprisedColourfulShirt-hy1gb', '@Mack0txop0', '@pandagamer6822', '@ManageHarryreviews', 
-'@kishan6691', '@Alexander-oq4jj', '@Jethalala-nm4rk', '@Gul-vu7gt', '@jaygour', '@BrainBiteSky',
+'@kishan6691', '@Alexander-oq4jj', '@Jethalala-nm4rk', '@Gul-vu7gt', '@jaygour', '@BrainBiteSky', '@BradCampbell-Plus', '@NoScop3Nexus', 
+'@AFKDemonTribe', '@kassandraparsley1368', '@omrinaude3050', '@Xegalla',
+'@alil-r1k', '@TaherTaherr-k5w', '@Business_In_Motion', '@boichalambalmayum8060', '@SeyaViw', '@وليدقاسم-ب1ن', '@Sfg-t1b', '@DhananjayKumarBauri', 
+'@hasansaoud4061', '@AjimRayma-ed1jr', '@AllaAlla-v4w', '@aliali33-b7j', '@Jharana-o9k', '@YasmineAballi', '@AsimKing-w9w', '@BoshraAlakel', 
+'@owowowowowowowowowow2956', '@alihssn9670', '@MostafaMhana-s1e', '@zkariaAlahmad', '@TarekTarek-n5s4c', '@HimanshuBansal-p3g', '@ShahedAlassaf-k4t5b', 
+'@lovelyhoney-e6w', '@alijafari-bo4hf', '@HamzaSamy-e8x', '@سجادسجاد-خ9د3و', '@forhadsylhet', '@KamalTiruwa-gz2gt', '@MystorageHarish', '@EliIcic',
 
 }
     
