@@ -368,7 +368,8 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@moreenogua', '@DelmarClifton-u7n', '@laura_amydog', '@kimberlyholt3056', '@LisaDufault-q2l', '@Brook-k6d', '@markbriHanthompson', '@thanhhữu51', '@Eric-Jordan-Miller', 
 '@fufuxia5' '@darrensmith9564', '@thymscd87', '@dancingdo.7', '@ann4501', '@Nahiiden', '@tsukisytcorner', '@maiionpar', '@j_yeet', '@foodiefodder', '@FakerT1-s9e', 
 '@JavierSierra-v2u', '@ReatigaMon', '@Kevingil-w6n', '@Aynah-v8j', '@Hua770', '@Mowa-e6i', '@vintagebookshelves', '@trouble0702', '@larrypatriciamiller35', 
-'@DungLe_7uu4s5', '@PaulLawrenceRichardson', '@gregorynoahjames17', '@russellwilson1962', '@brucethompson1981', 
+'@DungLe_7uu4s5', '@PaulLawrenceRichardson', '@gregorynoahjames17', '@russellwilson1962', '@brucethompson1981', '@michaelhaskell7421','@TheAnt9242', '@abialo2010', '@StrikeWarden', 
+'@t.j.poland2480', '@jodyalbert3426', '@andrewmiller6480', 
 }
 
     try:
