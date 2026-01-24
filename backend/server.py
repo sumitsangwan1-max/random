@@ -168,7 +168,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@Carl_Lynn_Nelson', '@josedanielmenXdoza', '@TerryJosephBrown_3308', '@RalphFrankGreen', '@albertmurNphy', '@EdwardJimenez-x3o', '@joshualee2003', 
 '@AlanGaryHughes', '@joshuahernandez1996', '@JordanMartinez_3103', '@Vincent_Charles_Green', '@Lawrence_Joshua_Taylor', '@KennethDonaldSanders', 
 '@KeithAdamMartin', '@勇輝-小野', '@TerryRalphHughes_8993', '@seanchavez2008', '@dylankelly1988', '@seanalbertking2000', '@josemyers1952', '@Mira-c8l4k', 
-'@Bheem-god', '@FamilyGuyGuru101', '@SunilYengkhom-y9p', 
+'@Bheem-god', '@FamilyGuyGuru101', '@SunilYengkhom-y9p', '@Thomas-c8w4l', '@azdirtbag1', '@michaelg.redman5740', '@richiebeene', 
 
 
 
@@ -410,8 +410,8 @@ async def pick_winners(request: PickWinnersRequest, req: Request):
 '@Cry0Spectre', '@CrashPandaBoo', '@josWekeithturner', '@AdamChristianParker', '@Henry.Arthur.Gonzalez', '@SeanPrice-4713', '@BillyGomez_3018', '@stevenallen2008', 
 '@WilliamCampbell_8011', '@PatrickHoward_7021', '@Nethansanders', '@GregoryNathanSanchez', '@LouisMatthewGray', '@ericwalterchavez1953', '@randYyparker', 
 '@Ethan-Douglas-Sanchez', '@dylanmoUrris', '@Frank-Paul-Jimenez', '@paparapapopopo', '@ensetrump', '@D-moneky-luffy', '@fufuxia5', '@Relaxcenter-x7w', '@zakootaAa', '@HappyGaming7342', 
-'@josegomez-xh8yr', '@Cry0Spectre', '@SilenTrigger2', 
-
+'@josegomez-xh8yr', '@Cry0Spectre', '@SilenTrigger2', '@Keiceee88', '@ptbngoc45', 
+'@KENTURTLES671', '@vivnaidoo7900', '@MichaelGates-b9z', '@bryanjohnson6619', '@Tobez21', '@AnimalHouse3323', '@shannondupont3051', 
 
         
 }
