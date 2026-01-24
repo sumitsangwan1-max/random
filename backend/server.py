@@ -173,7 +173,8 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@killersquad6245', '@mayankmalhotra3257', '@Keu2nd', '@historian2299', '@Venomguy796', '@passionbazz7129', '@surajka_gulam133', 
 '@WhatIdid-fe3ji', '@Target100-ns2lq', '@dearraj8195', '@loophole9832', '@vinitbhattacharya7299', '@Alwaysfirst007', '@sachinkumae9029',
 '@harryom9357', '@HbBh-yp9eq', '@linusvideoyt', '@letsupgrade360', '@punitpareek4520', '@Gold-fo8is', '@rajeshroy2080', '@reviewgadget5425', 
-'@spritalitybyohm184', '@MrDiljeet-n3j', '@gamerrox7337', 
+'@spritalitybyohm184', '@MrDiljeet-n3j', '@gamerrox7337', '@ahwo25', 
+
 
 
 
