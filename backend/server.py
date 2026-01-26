@@ -173,7 +173,15 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@killersquad6245', '@mayankmalhotra3257', '@Keu2nd', '@historian2299', '@Venomguy796', '@passionbazz7129', '@surajka_gulam133', 
 '@WhatIdid-fe3ji', '@Target100-ns2lq', '@dearraj8195', '@loophole9832', '@vinitbhattacharya7299', '@Alwaysfirst007', '@sachinkumae9029',
 '@harryom9357', '@HbBh-yp9eq', '@linusvideoyt', '@letsupgrade360', '@punitpareek4520', '@Gold-fo8is', '@rajeshroy2080', '@reviewgadget5425', 
-'@spritalitybyohm184', '@MrDiljeet-n3j', '@gamerrox7337', '@ahwo25', 
+'@spritalitybyohm184', '@MrDiljeet-n3j', '@gamerrox7337', '@ahwo25',
+
+'@willsmithmm', '@Karyi-f1l', '@lazer.lando9992', '@skawesomeman', '@IndiSind-e9o', '@BrianN-e6k', '@Tobi-x6c9t', '@Sentitude-b4q', 
+'@RareCandyRealm', '@TheBoosterBoss-f9q', '@CriticalCatch7101', '@PokeChronicles-p9u', '@MynameisJessie-l9c', '@landon-w4q', '@PokeJustice', 
+'@MattyMAN-s3o', '@Manny2-b5j', '@Jeffrey-l1v7v', '@ChloeCrafts-y2k', '@LenaDonovan-u9l', '@LebronDonuts', '@richmond12-d4f', '@Brad-c1h', 
+'@LANDON7776', '@KingPing-l9j', '@Killua-q9x', '@Rudolf-o6r', '@kieshakary', '@JustinJames-i6y7j', '@DoodooDumbells', '@Johnson-g7h2d', '@Justin-e6i', 
+'@NovaSphereMedia-w2m', '@PeakWaveStudio-v9j', '@TrainerTactics-u3n', '@BattleFrontierHQ', '@EliteFourEnergy', '@janeljames-d6l', '@Flutchin', 
+'@PokéPullsCentral-k9q', '@SkyElementalBox', '@PokeDudeASMR', '@Landy-w1p', '@LingChingPingDingRing', '@Leanard-p9j', '@chihaein', '@moonStatic8193', 
+'@PixelDrift1232', '@saiisthebest2773', '@sharifhossain8967', '@chivo739', '@red0332', '@JaceYap', 
 
 
 
