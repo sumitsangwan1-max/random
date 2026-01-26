@@ -181,7 +181,7 @@ def is_bot_comment(author: str, text: str) -> bool:
 '@LANDON7776', '@KingPing-l9j', '@Killua-q9x', '@Rudolf-o6r', '@kieshakary', '@JustinJames-i6y7j', '@DoodooDumbells', '@Johnson-g7h2d', '@Justin-e6i', 
 '@NovaSphereMedia-w2m', '@PeakWaveStudio-v9j', '@TrainerTactics-u3n', '@BattleFrontierHQ', '@EliteFourEnergy', '@janeljames-d6l', '@Flutchin', 
 '@PokéPullsCentral-k9q', '@SkyElementalBox', '@PokeDudeASMR', '@Landy-w1p', '@LingChingPingDingRing', '@Leanard-p9j', '@chihaein', '@moonStatic8193', 
-'@PixelDrift1232', '@saiisthebest2773', '@sharifhossain8967', '@chivo739', '@red0332', '@JaceYap', '@corrinap', '@Monster_zaczac', '@WavyWavy2', '@xanderbaby', 
+'@PixelDrift1232', '@saiisthebest2773', '@chivo739', '@red0332', '@JaceYap', '@corrinap', '@Monster_zaczac', '@WavyWavy2', '@xanderbaby', 
 '@NicolaClarke-t4p', '@MarcosChavez-f4b', '@ChristianLeal-i1g', '@Sahithi-f5y', '@PrimeCatcher', '@ArchExcel', '@oscarramos111', '@Kutey-tku', 
 
 
